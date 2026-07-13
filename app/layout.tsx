@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import { TopNav } from "./components/TopNav";
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         <TopNav />
         {children}
+        <Footer />
       </body>
     </html>
   );

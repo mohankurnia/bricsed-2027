@@ -3,9 +3,24 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const sponsors = [
-  { name: "Northstar Labs", type: "Platinum Sponsor" },
-  { name: "Aether Health", type: "Gold Sponsor" },
-  { name: "Nova Cloud", type: "Community Partner" },
+  {
+    slug: "northstar-labs",
+    name: "Northstar Labs",
+    type: "Platinum Sponsor",
+    focus: "Responsible AI infrastructure for regulated industries.",
+  },
+  {
+    slug: "aether-health",
+    name: "Aether Health",
+    type: "Gold Sponsor",
+    focus: "Connected care systems that improve clinical outcomes.",
+  },
+  {
+    slug: "nova-cloud",
+    name: "Nova Cloud",
+    type: "Community Partner",
+    focus: "Cloud-native developer education and open research support.",
+  },
 ];
 
 export default function SponsorsPage() {
@@ -34,6 +49,15 @@ export default function SponsorsPage() {
           >
             <h2 className="text-xl font-semibold">{sponsor.name}</h2>
             <p className="mt-2 text-sm text-muted-foreground">{sponsor.type}</p>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">
+              {sponsor.focus}
+            </p>
+            <Link
+              href={`/sponsors/${sponsor.slug}`}
+              className="mt-4 inline-flex text-sm font-medium text-primary"
+            >
+              View partnership details
+            </Link>
           </article>
         ))}
       </div>
