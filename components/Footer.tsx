@@ -36,7 +36,7 @@ export function Footer() {
             <p className="text-sm font-semibold">Contact</p>
             <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
               <li>hello@globaltechconf.com</li>
-              <li>Singapore • Online Hybrid</li>
+              <li>Malang • Online Hybrid</li>
             </ul>
           </div>
         </div>
