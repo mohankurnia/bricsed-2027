@@ -35,6 +35,14 @@ export default function ContactPage() {
           </p>
         </article>
       </div>
+
+      <div className="mt-4 rounded-3xl border border-border bg-background p-6 shadow-sm">
+        <h2 className="text-xl font-semibold">Need help?</h2>
+        <p className="mt-3 text-sm leading-7 text-muted-foreground">
+          Our team can assist with registration, paper submission questions, and
+          travel planning for attendees coming from abroad.
+        </p>
+      </div>
     </main>
   );
 }

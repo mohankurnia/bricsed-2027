@@ -20,7 +20,7 @@ const links = [
 
 export function TopNav() {
   return (
-    <header className="border-b border-border/70 bg-background/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between lg:px-8">
         <Link href="/" className="text-lg font-semibold tracking-tight">
           Global Tech Conference
@@ -32,7 +32,7 @@ export function TopNav() {
               href={link.href}
               className={cn(
                 buttonVariants({ variant: "ghost", size: "sm" }),
-                "inline-flex",
+                "inline-flex rounded-full",
               )}
             >
               {link.label}

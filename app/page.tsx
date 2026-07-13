@@ -17,6 +17,12 @@ const highlights = [
   },
 ];
 
+const stats = [
+  { value: "15+", label: "Countries" },
+  { value: "300+", label: "Attendees" },
+  { value: "40+", label: "Speakers" },
+];
+
 const tracks = [
   "Artificial Intelligence",
   "Sustainable Technology",
@@ -89,6 +95,20 @@ export default function Home() {
               <p className="mt-2 text-sm text-muted-foreground">
                 {item.detail}
               </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid gap-4 rounded-3xl border border-border bg-background p-6 shadow-sm md:grid-cols-3">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-2xl bg-muted/40 p-4 text-center"
+            >
+              <p className="text-2xl font-semibold text-foreground">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
             </div>
           ))}
         </div>
