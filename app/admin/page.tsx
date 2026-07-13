@@ -13,6 +13,13 @@ const paperStatuses = [
   "REJECTED",
 ] as const;
 
+const statusClasses: Record<string, string> = {
+  PENDING: "border-amber-300 bg-amber-50 text-amber-700",
+  UNDER_REVIEW: "border-sky-300 bg-sky-50 text-sky-700",
+  ACCEPTED: "border-emerald-300 bg-emerald-50 text-emerald-700",
+  REJECTED: "border-rose-300 bg-rose-50 text-rose-700",
+};
+
 async function updatePaperStatus(formData: FormData) {
   "use server";
 
@@ -76,13 +83,31 @@ export default async function AdminPage() {
     papers = [];
   }
 
+  const summaryCards = [
+    {
+      label: "Total submissions",
+      value: papers.length,
+      tone: "bg-primary/10 text-primary",
+    },
+    {
+      label: "Under review",
+      value: papers.filter((paper) => paper.status === "UNDER_REVIEW").length,
+      tone: "bg-sky-50 text-sky-700",
+    },
+    {
+      label: "Accepted",
+      value: papers.filter((paper) => paper.status === "ACCEPTED").length,
+      tone: "bg-emerald-50 text-emerald-700",
+    },
+  ];
+
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 py-16 lg:px-8">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-3xl font-semibold">Admin review</h1>
+          <h1 className="text-3xl font-semibold">Admin dashboard</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            Manage submissions and review paper status.
+            Monitor submissions, review progress, and update paper outcomes.
           </p>
         </div>
         <div className="flex gap-2">
@@ -93,7 +118,7 @@ export default async function AdminPage() {
               "inline-flex",
             )}
           >
-            Back to submissions
+            View submissions
           </Link>
           <Link
             href="/admin/login"
@@ -104,6 +129,21 @@ export default async function AdminPage() {
         </div>
       </div>
 
+      <div className="mt-8 grid gap-4 md:grid-cols-3">
+        {summaryCards.map((card) => (
+          <div
+            key={card.label}
+            className={cn(
+              "rounded-2xl border border-border p-4 shadow-sm",
+              card.tone,
+            )}
+          >
+            <p className="text-sm font-medium">{card.label}</p>
+            <p className="mt-2 text-3xl font-semibold">{card.value}</p>
+          </div>
+        ))}
+      </div>
+
       <div className="mt-8 grid gap-4">
         {papers.map((paper) => (
           <article
@@ -111,15 +151,23 @@ export default async function AdminPage() {
             className="rounded-2xl border border-border bg-background p-5 shadow-sm"
           >
             <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-              <div>
-                <h2 className="text-xl font-semibold">{paper.title}</h2>
-                <p className="mt-2 text-sm leading-7 text-muted-foreground">
+              <div className="max-w-3xl">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h2 className="text-xl font-semibold">{paper.title}</h2>
+                  <span
+                    className={cn(
+                      "rounded-full border px-3 py-1 text-sm font-medium",
+                      statusClasses[paper.status] ??
+                        "border-border bg-muted text-muted-foreground",
+                    )}
+                  >
+                    {paper.status}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   {paper.abstract}
                 </p>
               </div>
-              <span className="rounded-full border border-border bg-muted px-3 py-1 text-sm">
-                {paper.status}
-              </span>
             </div>
             <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted-foreground">
               <span>Author: {paper.author.name}</span>
