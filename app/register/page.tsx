@@ -27,7 +27,21 @@ async function registerAttendee(formData: FormData) {
   redirect("/register?success=Registration completed successfully");
 }
 
-export default function RegisterPage() {
+export default async function RegisterPage({
+  searchParams,
+}: {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const resolvedSearchParams = searchParams ? await searchParams : {};
+  const successMessage =
+    typeof resolvedSearchParams.success === "string"
+      ? resolvedSearchParams.success
+      : undefined;
+  const errorMessage =
+    typeof resolvedSearchParams.error === "string"
+      ? resolvedSearchParams.error
+      : undefined;
+
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 py-16 lg:px-8">
       <div className="rounded-3xl border border-border bg-background p-8 shadow-sm">
@@ -35,6 +49,33 @@ export default function RegisterPage() {
         <p className="mt-2 text-sm leading-7 text-muted-foreground">
           Reserve your seat and join the international event.
         </p>
+
+        <div className="mt-6 grid gap-3 md:grid-cols-3">
+          {[
+            "Networking with global researchers",
+            "Access to keynote and workshop sessions",
+            "Certificate of participation",
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-2xl border border-border bg-muted/40 px-3 py-3 text-sm text-muted-foreground"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+
+        {successMessage ? (
+          <div className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">
+            {successMessage}
+          </div>
+        ) : null}
+
+        {errorMessage ? (
+          <div className="mt-6 rounded-xl border border-rose-200 bg-rose-50 p-3 text-sm text-rose-700">
+            {errorMessage}
+          </div>
+        ) : null}
 
         <form action={registerAttendee} className="mt-8 space-y-5">
           <div className="grid gap-5 md:grid-cols-2">

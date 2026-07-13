@@ -37,17 +37,22 @@ export default function FaqPage() {
         </Link>
       </div>
 
-      <div className="mt-8 grid gap-4">
+      <div className="mt-8 space-y-3">
         {faqs.map((item) => (
-          <article
+          <details
             key={item.question}
-            className="rounded-2xl border border-border bg-background p-5 shadow-sm"
+            className="group rounded-2xl border border-border bg-background p-5 shadow-sm"
           >
-            <h2 className="text-lg font-semibold">{item.question}</h2>
-            <p className="mt-2 text-sm leading-7 text-muted-foreground">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+              <span className="text-lg font-semibold">{item.question}</span>
+              <span className="text-xl text-muted-foreground transition group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">
               {item.answer}
             </p>
-          </article>
+          </details>
         ))}
       </div>
     </main>
