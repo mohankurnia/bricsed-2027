@@ -71,6 +71,12 @@ export default async function PapersPage({
               <span>Event: {paper.event.title}</span>
               <span>Submitted: {paper.createdAt.toLocaleDateString()}</span>
             </div>
+            <Link
+              href={`/papers/${paper.id}`}
+              className="mt-4 inline-flex text-sm font-medium text-primary"
+            >
+              View details
+            </Link>
           </article>
         ))}
       </div>

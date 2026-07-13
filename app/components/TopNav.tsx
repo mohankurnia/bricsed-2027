@@ -14,6 +14,7 @@ const links = [
   { href: "/attendees", label: "Attendees" },
   { href: "/submit", label: "Submit" },
   { href: "/papers", label: "Papers" },
+  { href: "/review", label: "Review" },
   { href: "/admin", label: "Admin" },
 ];
 
