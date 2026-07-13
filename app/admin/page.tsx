@@ -1,9 +1,17 @@
 import { revalidatePath } from "next/cache";
+import { cookies } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { PaperStatus } from "@/lib/generated/prisma";
+
+const paperStatuses = [
+  "PENDING",
+  "UNDER_REVIEW",
+  "ACCEPTED",
+  "REJECTED",
+] as const;
 
 async function updatePaperStatus(formData: FormData) {
   "use server";
@@ -11,13 +19,16 @@ async function updatePaperStatus(formData: FormData) {
   const paperId = String(formData.get("paperId") ?? "").trim();
   const status = String(formData.get("status") ?? "").trim();
 
-  if (!paperId || !Object.values(PaperStatus).includes(status as PaperStatus)) {
+  if (
+    !paperId ||
+    !paperStatuses.includes(status as (typeof paperStatuses)[number])
+  ) {
     return;
   }
 
   await prisma.paper.update({
     where: { id: paperId },
-    data: { status: status as PaperStatus },
+    data: { status: status as (typeof paperStatuses)[number] },
   });
 
   revalidatePath("/admin");
@@ -25,13 +36,42 @@ async function updatePaperStatus(formData: FormData) {
 }
 
 export default async function AdminPage() {
-  let papers: Awaited<ReturnType<typeof prisma.paper.findMany>> = [];
+  const cookieStore = await cookies();
+  const isAdmin = cookieStore.get("admin-auth")?.value === "true";
+
+  if (!isAdmin) {
+    redirect("/admin/login?error=Please sign in first");
+  }
+
+  let papers: Array<{
+    id: string;
+    title: string;
+    abstract: string;
+    status: string;
+    createdAt: Date;
+    author: {
+      name: string;
+      email: string;
+    };
+  }> = [];
 
   try {
-    papers = await prisma.paper.findMany({
+    const data = (await prisma.paper.findMany({
       include: { author: true },
       orderBy: { createdAt: "desc" },
-    });
+    })) as Array<any>;
+
+    papers = data.map((paper: any) => ({
+      id: paper.id,
+      title: paper.title,
+      abstract: paper.abstract,
+      status: paper.status,
+      createdAt: paper.createdAt,
+      author: {
+        name: paper.author.name,
+        email: paper.author.email,
+      },
+    }));
   } catch {
     papers = [];
   }
@@ -45,12 +85,23 @@ export default async function AdminPage() {
             Manage submissions and review paper status.
           </p>
         </div>
-        <Link
-          href="/papers"
-          className={cn(buttonVariants({ variant: "outline" }), "inline-flex")}
-        >
-          Back to submissions
-        </Link>
+        <div className="flex gap-2">
+          <Link
+            href="/papers"
+            className={cn(
+              buttonVariants({ variant: "outline" }),
+              "inline-flex",
+            )}
+          >
+            Back to submissions
+          </Link>
+          <Link
+            href="/admin/login"
+            className={cn(buttonVariants({ variant: "ghost" }), "inline-flex")}
+          >
+            Logout
+          </Link>
+        </div>
       </div>
 
       <div className="mt-8 grid gap-4">
@@ -85,7 +136,7 @@ export default async function AdminPage() {
                 defaultValue={paper.status}
                 className="rounded-lg border border-input bg-background px-3 py-2 text-sm"
               >
-                {Object.values(PaperStatus).map((status) => (
+                {paperStatuses.map((status) => (
                   <option key={status} value={status}>
                     {status}
                   </option>

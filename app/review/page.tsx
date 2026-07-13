@@ -4,13 +4,27 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default async function ReviewPage() {
-  let papers: Awaited<ReturnType<typeof prisma.paper.findMany>> = [];
+  let papers: Array<{
+    id: string;
+    title: string;
+    abstract: string;
+    status: string;
+    author: { name: string; email: string };
+  }> = [];
 
   try {
-    papers = await prisma.paper.findMany({
+    const data = await prisma.paper.findMany({
       include: { author: true },
       orderBy: { createdAt: "desc" },
     });
+
+    papers = data.map((paper) => ({
+      id: paper.id,
+      title: paper.title,
+      abstract: paper.abstract,
+      status: paper.status,
+      author: { name: paper.author.name, email: paper.author.email },
+    }));
   } catch {
     papers = [];
   }

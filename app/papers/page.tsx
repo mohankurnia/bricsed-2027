@@ -9,13 +9,31 @@ export default async function PapersPage({
   searchParams: Promise<{ success?: string; error?: string }>;
 }) {
   const params = await searchParams;
-  let papers: Awaited<ReturnType<typeof prisma.paper.findMany>> = [];
+  let papers: Array<{
+    id: string;
+    title: string;
+    abstract: string;
+    status: string;
+    createdAt: Date;
+    author: { name: string };
+    event: { title: string };
+  }> = [];
 
   try {
-    papers = await prisma.paper.findMany({
+    const data = await prisma.paper.findMany({
       include: { author: true, event: true },
       orderBy: { createdAt: "desc" },
     });
+
+    papers = data.map((paper) => ({
+      id: paper.id,
+      title: paper.title,
+      abstract: paper.abstract,
+      status: paper.status,
+      createdAt: paper.createdAt,
+      author: { name: paper.author.name },
+      event: { title: paper.event.title },
+    }));
   } catch {
     papers = [];
   }
