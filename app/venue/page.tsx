@@ -2,6 +2,12 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const travelTips = [
+  "Airport shuttle runs every 20 minutes from Terminal 2",
+  "Hotel shuttles are available for registered attendees",
+  "Wi-Fi is available throughout the venue and exhibition hall",
+];
+
 export default function VenuePage() {
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 py-16 lg:px-8">
@@ -37,6 +43,20 @@ export default function VenuePage() {
             registration opens.
           </p>
         </article>
+      </div>
+
+      <div className="mt-4 rounded-3xl border border-border bg-background p-6 shadow-sm">
+        <h2 className="text-xl font-semibold">Practical tips</h2>
+        <ul className="mt-4 space-y-3">
+          {travelTips.map((tip) => (
+            <li
+              key={tip}
+              className="rounded-2xl border border-border bg-muted/40 px-3 py-3 text-sm text-muted-foreground"
+            >
+              {tip}
+            </li>
+          ))}
+        </ul>
       </div>
     </main>
   );
