@@ -20,6 +20,7 @@ Website conference internasional dengan fitur landing page, halaman submit paper
    ```bash
    npx prisma generate
    npx prisma db push
+   npx prisma db seed
    ```
 4. Jalankan aplikasi:
    ```bash
