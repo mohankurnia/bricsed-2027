@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -47,23 +49,33 @@ export function TopNav() {
           Global Tech Conference
         </Link>
 
-        <nav className="hidden items-center gap-2 lg:flex">
+        {/* Desktop */}
+
+        <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((item) => (
             <NavItem key={item.href} href={item.href}>
               {item.label}
             </NavItem>
           ))}
 
-          <Menu label="Conference" items={conferenceItems} />
+          <DesktopDropdown label="Conference" items={conferenceItems} />
 
-          <Menu label="Resources" items={resourcesItems} />
+          <DesktopDropdown label="Resources" items={resourcesItems} />
 
-          <Menu label="Dashboard" items={dashboardItems} />
+          <DesktopDropdown label="Dashboard" items={dashboardItems} />
         </nav>
 
-        <Button nativeButton={false} render={<Link href="/register" />}>
-          Register
-        </Button>
+        <div className="flex items-center gap-3">
+          <Button
+            className="hidden sm:inline-flex"
+            nativeButton={false}
+            render={<Link href="/register" />}
+          >
+            Register
+          </Button>
+
+          <MobileMenu />
+        </div>
       </div>
     </header>
   );
@@ -93,7 +105,7 @@ function NavItem({
   );
 }
 
-function Menu({
+function DesktopDropdown({
   label,
   items,
 }: {
@@ -105,12 +117,13 @@ function Menu({
 }) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="inline-flex h-9 items-center gap-1 rounded-md px-3 text-sm font-medium transition hover:bg-muted">
+      <DropdownMenuTrigger className="inline-flex h-9 items-center gap-1 rounded-md px-3 text-sm font-medium hover:bg-muted">
         {label}
+
         <ChevronDown className="h-4 w-4" />
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-52">
+      <DropdownMenuContent className="w-56">
         {items.map((item) => (
           <DropdownMenuItem
             key={item.href}
@@ -119,5 +132,85 @@ function Menu({
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
+  );
+}
+
+function MobileMenu() {
+  return (
+    <div className="lg:hidden">
+      <Sheet>
+        <SheetTrigger
+          render={
+            <Button className="rounded-md p-2 hover:bg-muted" type="button">
+              <Menu className="h-6 w-6" />
+            </Button>
+          }
+        />
+
+        <SheetContent side="right" className="w-80">
+          <MobileNavigation />
+        </SheetContent>
+      </Sheet>
+    </div>
+  );
+}
+
+function MobileNavigation() {
+  return (
+    <div className="mt-8 flex flex-col gap-8 px-4">
+      <Section title="Pages" items={navLinks} />
+
+      <Section title="Conference" items={conferenceItems} />
+
+      <Section title="Resources" items={resourcesItems} />
+
+      <Section title="Dashboard" items={dashboardItems} />
+
+      <Button
+        className="w-full"
+        nativeButton={false}
+        render={<Link href="/register" />}
+      >
+        Register
+      </Button>
+    </div>
+  );
+}
+
+function Section({
+  title,
+  items,
+}: {
+  title: string;
+  items: {
+    href: string;
+    label: string;
+  }[];
+}) {
+  const pathname = usePathname();
+
+  return (
+    <div>
+      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        {title}
+      </h3>
+
+      <div className="space-y-1">
+        {items.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={cn(
+              "block rounded-md px-3 py-2 text-sm transition-colors",
+              pathname === item.href
+                ? "bg-primary text-primary-foreground"
+                : "hover:bg-muted",
+            )}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
