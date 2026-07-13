@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+enum Role {
+  PARTICIPANT
+  REVIEWER
+  ADMIN
+}
+
+enum PaperStatus {
+  PENDING
+  UNDER_REVIEW
+  ACCEPTED
+  REJECTED
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String   
+  role      Role     @default(PARTICIPANT)
+  papers    Paper[]  @relation("AuthorPapers")
+  reviews   Paper[]  @relation("ReviewerPapers")
+  createdAt DateTime @default(now())
+}
+
+model ConferenceEvent {
+  id          String   @id @default(uuid())
+  title       String
+  theme       String
+  dateStart   DateTime
+  dateEnd     DateTime
+  deadline    DateTime 
+  papers      Paper[]
+  createdAt   DateTime @default(now())
+}
+
+model Paper {
+  id           String          @id @default(uuid())
+  title        String
+  abstract     String          @db.Text
+  fileUrl      String          // URL file PDF 
+  status       PaperStatus     @default(PENDING)
+  
+  authorId     String
+  author       User            @relation("AuthorPapers", fields: [authorId], references: [id])
+  
+  reviewerId   String?
+  reviewer     User?           @relation("ReviewerPapers", fields: [reviewerId], references: [id])
+  
+  eventId      String
+  event        ConferenceEvent @relation(fields: [eventId], references: [id])
+  
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+}
+
+model Attendee {
+  id           String   @id @default(uuid())
+  fullName     String
+  email        String   @unique
+  affiliation  String
+  ticketType   String
+  createdAt    DateTime @default(now())
+}
