@@ -4,6 +4,14 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { cn } from "@/lib/utils";
 
 const paperStatuses = [
@@ -61,6 +69,21 @@ export default async function AdminPage() {
       email: string;
     };
   }> = [];
+  let attendees: Array<{
+    id: string;
+    fullName: string;
+    email: string;
+    affiliation: string;
+    ticketType: string;
+    createdAt: Date;
+  }> = [];
+  let reviewers: Array<{
+    id: string;
+    name: string;
+    email: string;
+    role: string;
+    createdAt: Date;
+  }> = [];
 
   try {
     const data = (await prisma.paper.findMany({
@@ -79,8 +102,35 @@ export default async function AdminPage() {
         email: paper.author.email,
       },
     }));
+    const attendeesData = await prisma.attendee.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+
+    attendees = attendeesData.map((attendee) => ({
+      id: attendee.id,
+      fullName: attendee.fullName,
+      email: attendee.email,
+      affiliation: attendee.affiliation,
+      ticketType: attendee.ticketType,
+      createdAt: attendee.createdAt,
+    }));
+
+    const reviewersData = await prisma.user.findMany({
+      where: { role: "REVIEWER" },
+      orderBy: { createdAt: "desc" },
+    });
+
+    reviewers = reviewersData.map((reviewer) => ({
+      id: reviewer.id,
+      name: reviewer.name,
+      email: reviewer.email,
+      role: reviewer.role,
+      createdAt: reviewer.createdAt,
+    }));
   } catch {
     papers = [];
+    attendees = [];
+    reviewers = [];
   }
 
   const summaryCards = [
@@ -98,6 +148,11 @@ export default async function AdminPage() {
       label: "Accepted",
       value: papers.filter((paper) => paper.status === "ACCEPTED").length,
       tone: "bg-emerald-50 text-emerald-700",
+    },
+    {
+      label: "Registered attendees",
+      value: attendees.length,
+      tone: "bg-violet-50 text-violet-700",
     },
   ];
 
@@ -129,7 +184,7 @@ export default async function AdminPage() {
         </div>
       </div>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-3">
+      <div className="mt-8 grid gap-4 md:grid-cols-4">
         {summaryCards.map((card) => (
           <div
             key={card.label}
@@ -142,6 +197,92 @@ export default async function AdminPage() {
             <p className="mt-2 text-3xl font-semibold">{card.value}</p>
           </div>
         ))}
+      </div>
+
+      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+        <section className="rounded-2xl border border-border bg-background p-5 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-xl font-semibold">Reviewers</h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Assigned reviewer accounts
+              </p>
+            </div>
+          </div>
+          <div className="mt-4 overflow-hidden rounded-xl border border-border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Name</TableHead>
+                  <TableHead>Email</TableHead>
+                  <TableHead>Role</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {reviewers.length === 0 ? (
+                  <TableRow>
+                    <TableCell
+                      colSpan={3}
+                      className="py-4 text-center text-sm text-muted-foreground"
+                    >
+                      No reviewer data yet.
+                    </TableCell>
+                  </TableRow>
+                ) : (
+                  reviewers.map((reviewer) => (
+                    <TableRow key={reviewer.id}>
+                      <TableCell>{reviewer.name}</TableCell>
+                      <TableCell>{reviewer.email}</TableCell>
+                      <TableCell>{reviewer.role}</TableCell>
+                    </TableRow>
+                  ))
+                )}
+              </TableBody>
+            </Table>
+          </div>
+        </section>
+
+        <section className="rounded-2xl border border-border bg-background p-5 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-xl font-semibold">Attendees</h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Registered conference participants
+              </p>
+            </div>
+          </div>
+          <div className="mt-4 overflow-hidden rounded-xl border border-border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Name</TableHead>
+                  <TableHead>Affiliation</TableHead>
+                  <TableHead>Ticket</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {attendees.length === 0 ? (
+                  <TableRow>
+                    <TableCell
+                      colSpan={3}
+                      className="py-4 text-center text-sm text-muted-foreground"
+                    >
+                      No attendee data yet.
+                    </TableCell>
+                  </TableRow>
+                ) : (
+                  attendees.map((attendee) => (
+                    <TableRow key={attendee.id}>
+                      <TableCell>{attendee.fullName}</TableCell>
+                      <TableCell>{attendee.affiliation}</TableCell>
+                      <TableCell>{attendee.ticketType}</TableCell>
+                    </TableRow>
+                  ))
+                )}
+              </TableBody>
+            </Table>
+          </div>
+        </section>
       </div>
 
       <div className="mt-8 grid gap-4">
