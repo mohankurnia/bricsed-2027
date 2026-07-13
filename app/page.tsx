@@ -113,6 +113,35 @@ export default function Home() {
           ))}
         </div>
 
+        <div className="rounded-3xl border border-border bg-background p-8 shadow-sm">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-2xl font-semibold">Ready to join?</h2>
+              <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                Submit your paper, register as an attendee, and be part of the
+                conversation.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/register"
+                className={cn(buttonVariants({ size: "lg" }), "inline-flex")}
+              >
+                Register now
+              </Link>
+              <Link
+                href="/about"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "inline-flex",
+                )}
+              >
+                Learn more
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-3xl border border-border bg-background p-6 shadow-sm">
             <h2 className="text-2xl font-semibold">Conference themes</h2>
