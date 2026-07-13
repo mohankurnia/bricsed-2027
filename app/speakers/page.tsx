@@ -70,6 +70,12 @@ export default function SpeakersPage() {
             <p className="mt-3 rounded-lg border border-border bg-muted/40 px-3 py-2 text-sm text-foreground">
               {speaker.session}
             </p>
+            <Link
+              href={`/speakers/${speaker.slug}`}
+              className="mt-4 inline-flex text-sm font-medium text-primary"
+            >
+              View profile
+            </Link>
           </article>
         ))}
       </div>
