@@ -1,19 +1,14 @@
 import "dotenv/config";
-import { PrismaMariaDb } from "@prisma/adapter-mariadb";
-
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
 import {
   PrismaClient,
   Role,
   PaperStatus,
 } from "../lib/generated/prisma/client";
-
-const adapter = new PrismaMariaDb({
-  host: process.env.DATABASE_HOST,
-  user: process.env.DATABASE_USER,
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME,
-  connectionLimit: 5,
-});
+const connectionString = `${process.env.DATABASE_URL}`;
+const pool = new Pool({ connectionString });
+const adapter = new PrismaPg(pool);
 
 const prisma = new PrismaClient({ adapter });
 
@@ -75,7 +70,8 @@ async function main() {
       data: [
         {
           title: "Deep Learning for Medical Imaging",
-          abstract: "Deep learning approaches for medical image classification.",
+          abstract:
+            "Deep learning approaches for medical image classification.",
           fileUrl: "/papers/deep-learning.pdf",
           status: PaperStatus.UNDER_REVIEW,
           authorId: participant.id,
@@ -130,7 +126,11 @@ async function main() {
   }
 
   console.log("✅ Seed completed!");
-  console.log({ admin: admin.email, reviewer: reviewer.email, participant: participant.email });
+  console.log({
+    admin: admin.email,
+    reviewer: reviewer.email,
+    participant: participant.email,
+  });
 }
 
 main()

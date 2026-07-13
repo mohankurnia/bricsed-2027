@@ -4,18 +4,21 @@ import { cn } from "@/lib/utils";
 
 const speakers = [
   {
+    slug: "dr-amina-rahman",
     name: "Dr. Amina Rahman",
     role: "AI Research Lead",
     topic: "Designing Responsible AI Systems",
     session: "Keynote • Building trustworthy AI for public impact",
   },
   {
+    slug: "prof-daniel-kim",
     name: "Prof. Daniel Kim",
     role: "Sustainability Scientist",
     topic: "Climate Tech and Human-Centered Innovation",
     session: "Panel • Turning climate research into scalable solutions",
   },
   {
+    slug: "sarah-chen",
     name: "Sarah Chen",
     role: "Product Strategist",
     topic: "From Research to Global Product Launch",
