@@ -4,8 +4,10 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/agenda", label: "Agenda" },
   { href: "/speakers", label: "Speakers" },
   { href: "/sponsors", label: "Sponsors" },
+  { href: "/faq", label: "FAQ" },
   { href: "/register", label: "Register" },
   { href: "/attendees", label: "Attendees" },
   { href: "/submit", label: "Submit" },
