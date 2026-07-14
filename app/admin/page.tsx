@@ -13,6 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
+import { UpdatePaperStatus } from "../review/update-status";
 
 const paperStatuses = [
   "PENDING",
@@ -285,62 +286,84 @@ export default async function AdminPage() {
         </section>
       </div>
 
-      <div className="mt-8 grid gap-4">
-        {papers.map((paper) => (
-          <article
-            key={paper.id}
-            className="rounded-2xl border border-border bg-background p-5 shadow-sm"
-          >
-            <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-              <div className="max-w-3xl">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h2 className="text-xl font-semibold">{paper.title}</h2>
-                  <span
-                    className={cn(
-                      "rounded-full border px-3 py-1 text-sm font-medium",
-                      statusClasses[paper.status] ??
-                        "border-border bg-muted text-muted-foreground",
-                    )}
-                  >
-                    {paper.status}
-                  </span>
+      <section className="mt-10">
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <h2 className="text-2xl font-semibold">Paper Management</h2>
+            <p className="text-sm text-muted-foreground">
+              Manage submissions and update review progress.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-6">
+          {papers.map((paper) => (
+            <div
+              key={paper.id}
+              className="rounded-3xl border border-border bg-background p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3 className="text-xl font-semibold">{paper.title}</h3>
+
+                    <span
+                      className={cn(
+                        "rounded-full border px-3 py-1 text-xs font-semibold",
+                        statusClasses[paper.status],
+                      )}
+                    >
+                      {paper.status.replaceAll("_", " ")}
+                    </span>
+                  </div>
+
+                  <p className="mt-4 line-clamp-3 text-sm leading-7 text-muted-foreground">
+                    {paper.abstract}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-6 text-sm text-muted-foreground">
+                    <div>
+                      <p className="font-medium text-foreground">Author</p>
+                      <p>{paper.author.name}</p>
+                    </div>
+
+                    <div>
+                      <p className="font-medium text-foreground">Email</p>
+                      <p>{paper.author.email}</p>
+                    </div>
+
+                    <div>
+                      <p className="font-medium text-foreground">Submitted</p>
+                      <p>{paper.createdAt.toLocaleDateString()}</p>
+                    </div>
+                  </div>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  {paper.abstract}
-                </p>
+
+                <div className="flex w-full flex-col gap-3 lg:w-60">
+                  <UpdatePaperStatus id={paper.id} status={paper.status} />
+
+                  <Link
+                    href={`/papers/${paper.id}`}
+                    className={cn(buttonVariants(), "w-full")}
+                  >
+                    View Paper
+                  </Link>
+                </div>
               </div>
             </div>
-            <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted-foreground">
-              <span>Author: {paper.author.name}</span>
-              <span>Email: {paper.author.email}</span>
-            </div>
+          ))}
 
-            <form
-              action={updatePaperStatus}
-              className="mt-4 flex flex-wrap items-center gap-2"
-            >
-              <input type="hidden" name="paperId" value={paper.id} />
-              <select
-                name="status"
-                defaultValue={paper.status}
-                className="rounded-lg border border-input bg-background px-3 py-2 text-sm"
-              >
-                {paperStatuses.map((status) => (
-                  <option key={status} value={status}>
-                    {status}
-                  </option>
-                ))}
-              </select>
-              <button
-                type="submit"
-                className="rounded-lg border border-border bg-muted px-3 py-2 text-sm font-medium"
-              >
-                Update status
-              </button>
-            </form>
-          </article>
-        ))}
-      </div>
+          {papers.length === 0 && (
+            <div className="rounded-3xl border border-dashed border-border py-16 text-center">
+              <h3 className="text-xl font-semibold">No paper submissions</h3>
+
+              <p className="mt-2 text-muted-foreground">
+                Papers submitted by authors will appear here.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
     </main>
   );
 }
