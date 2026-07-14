@@ -1,6 +1,6 @@
 "use server";
 
-import type { PaperStatus } from "@prisma/client";
+import type { PaperStatus } from "@/lib/generated/prisma/client";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db";
 
