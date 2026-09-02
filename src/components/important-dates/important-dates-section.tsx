@@ -14,10 +14,10 @@ export function ImportantDatesSection() {
                 </h2>
                 <div className="mt-10">
                     <h3 className="text-3xl font-black italic">
-            <span className="text-[#0645ff]">
+            <span className="text-[#0239E0]">
               International
             </span>{" "}
-                        <span className="text-[#0aa31a]">
+                        <span className="text-[#11990A]">
               Conference
             </span>
                     </h3>
@@ -27,10 +27,10 @@ export function ImportantDatesSection() {
 
                 <div className="mt-14">
                     <h3 className="text-3xl font-black italic">
-            <span className="text-[#0645ff]">
+            <span className="text-[#0239E0]">
               Paper
             </span>{" "}
-                        <span className="text-[#0aa31a]">
+                        <span className="text-[#11990A]">
               Competition
             </span>
                     </h3>
