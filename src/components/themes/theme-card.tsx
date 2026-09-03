@@ -2,44 +2,45 @@ import Image from "next/image"
 
 type ThemeCardProps = {
     title: string
-    image?: string
-    label?: string
+    image: string
+    label: string
+    onViewMore: () => void
 }
 
 export function ThemeCard({
-                              title,
-                              image,
-                              label = "Main Theme",
-                          }: ThemeCardProps) {
+                        title,
+                        image,
+                        label,
+                        // onViewMore,
+                    }: ThemeCardProps) {
     return (
-        <article className="flex h-full flex-col rounded-[18px] bg-white p-4">
-            {image && (
-                <div className="relative aspect-[2.15/1] overflow-hidden rounded-[12px] bg-zinc-200">
-                    <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
-            )}
+        <article className="flex h-full flex-col rounded-[18px] bg-white p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(0,0,0,.10)]">
+            <div className="relative aspect-[2.15/1] overflow-hidden rounded-xl">
+                <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                />
+            </div>
 
-            <h3 className="mt-4 text-xl font-medium leading-[0.95] tracking-[0.04em] text-[#001431]">
+            <h3 className="mt-4 text-4xl font-bold text-[#001431]">
                 {title}
             </h3>
 
-            <p className="mt-4 text-sm text-zinc-400">
+            <p className="mt-1 text-lg text-zinc-400">
                 {label}
             </p>
 
-            <button
+            {/* <button
                 type="button"
-                className="mt-auto pt-5"
+                onClick={onViewMore}
+                className="mt-auto pt-5 cursor-pointer"
             >
-        <span className="flex min-h-[50px] items-center justify-center rounded-xl bg-[#f5f5f5] text-[15px] font-medium transition hover:bg-[#ececec]">
-          View more
-        </span>
-            </button>
+                <span className="flex min-h-[50px] items-center justify-center rounded-xl bg-[#f5f5f5] text-[15px] font-medium transition duration-500 hover:bg-[#023FFC] hover:font-bold hover:text-white">
+                    View more
+                </span>
+            </button> */}
         </article>
     )
 }

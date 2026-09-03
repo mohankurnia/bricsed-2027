@@ -8,10 +8,24 @@ import { navigation } from "@/data/navigation"
 
 export function SiteHeader() {
     const [isScrolled, setIsScrolled] = useState(false)
+    const [activeSection, setActiveSection] = useState("#home")
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 40)
+
+            const sectionOffset = 100
+            let currentSection = navigation[0].href
+
+            for (const item of navigation) {
+                const section = document.querySelector(item.href)
+
+                if (section && section.getBoundingClientRect().top <= sectionOffset) {
+                    currentSection = item.href
+                }
+            }
+
+            setActiveSection(currentSection)
         }
 
         handleScroll()
@@ -37,7 +51,7 @@ export function SiteHeader() {
             <div
                 className={[
                     "container mx-auto p-5 flex w-[min(1240px,calc(100%-48px))] items-center justify-between transition-all duration-300",
-                    isScrolled ? "h-[72px]" : "h-35",
+                    isScrolled ? "h-18" : "h-35",
                 ].join(" ")}
             >
                 {/* Logo */}
@@ -51,8 +65,8 @@ export function SiteHeader() {
                         className={[
                             "h-auto object-contain transition-all duration-300",
                             isScrolled
-                                ? "w-[145px]"
-                                : "w-[175px] md:w-[190px]",
+                                ? "w-36.25"
+                                : "w-43.75 md:w-47.5",
                         ].join(" ")}
                     />
                 </Link>
@@ -63,7 +77,12 @@ export function SiteHeader() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className=" text-[15px] font-medium text-white/70 transition-all duration-300 hover:text-white hover:[text-shadow:0_0_40px_#F6F6F6,0_0_30px_#F6F6F6]"
+                            aria-current={activeSection === item.href ? "page" : undefined}
+                            className={`text-[15px] font-medium transition-all duration-300 hover:text-white hover:[text-shadow:0_0_40px_#F6F6F6,0_0_30px_#F6F6F6] ${
+                                activeSection === item.href
+                                    ? "text-white [text-shadow:0_0_20px_#F6F6F6]"
+                                    : "text-white/70"
+                            }`}
                         >
                             {item.label}
                         </Link>
@@ -81,7 +100,12 @@ export function SiteHeader() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="block rounded-xl px-4 py-3 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
+                                aria-current={activeSection === item.href ? "page" : undefined}
+                                className={`block rounded-xl px-4 py-3 text-sm transition hover:bg-white/10 hover:text-white ${
+                                    activeSection === item.href
+                                        ? "bg-white/10 text-white"
+                                        : "text-white/80"
+                                }`}
                             >
                                 {item.label}
                             </Link>

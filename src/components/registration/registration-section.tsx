@@ -1,31 +1,49 @@
+"use client"
+
+import Link from "next/link"
+import { useState } from "react"
+
 import { PricingCard } from "@/components/registration/pricing-card"
 
+import { internationalConference } from "@/data/programs"
 import {
     conferenceRegistrationEarlyBird,
     conferenceRegistrationRegularWave,
-    paperSubmission,
+    // paperSubmission,
 } from "@/data/registration"
 
 function PricingGroup({
-                          title,
-                          items,
-                      }: {
+                        title,
+                        date,
+                        items,
+                        program
+                    }: {
     title: string
+    date: string
     items: {
         title: string
         prices: string[][]
     }[]
+    program: string
 }) {
     return (
-        <div className="rounded-[14px] bg-gradient-to-b from-[#001431] via-[#05287e] to-[#0645ff] p-5">
-            <h3 className="mb-5 text-center text-3xl font-bold text-white">
+        <div className="rounded-[14px] bg-linear-to-b from-[#001431] via-[#05287e] to-[#0645ff] p-10">
+            <p className="text-center text-md font-semibold bg-[#11990A] mx-auto w-fit px-5 py-2 rounded-full text-white">
+                {program}
+            </p>
+
+            <h2 className="text-center text-5xl font-bold text-white mt-5 mb-2">
                 {title}
-            </h3>
+            </h2>
+
+            <p className="text-center text-xl text-white mb-5">
+                {date}
+            </p>
 
             <div
                 className={
                     items.length > 1
-                        ? "grid gap-3 md:grid-cols-2"
+                        ? "grid gap-10 md:grid-cols-2"
                         : "grid"
                 }
             >
@@ -36,35 +54,90 @@ function PricingGroup({
                     />
                 ))}
             </div>
+
+            <div className="mt-10 mx-auto flex justify-center">
+                <Link
+                    href={internationalConference.registration_link}
+                    target="_blank"
+                    className="rounded-full border text-white border-white bg-[#001431] px-8 py-3 text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] transition hover:-translate-y-0.5 hover:bg-[#05245b]"
+                >
+                    Register Now
+                </Link>
+            </div>
         </div>
     )
 }
 
+const pricingTabs = [
+    {
+        label: "Early Bird",
+        title: "Early Bird",
+        date: "10 - 26 November 2026",
+        program: "International Conference",
+        items: conferenceRegistrationEarlyBird,
+    },
+    {
+        label: "Regular Wave",
+        title: "Regular Wave",
+        date: "27 November - 26 December 2026",
+        program: "International Conference",
+        items: conferenceRegistrationRegularWave,
+    },
+    // {
+    //     label: "Paper Submission",
+    //     title: "Paper Submission",
+    //     date: "10 November 2026",
+    //     program: "International Paper Student Competition",
+    //     items: [paperSubmission],
+    // },
+]
+
 export function RegistrationSection() {
+    const [activeTab, setActiveTab] = useState(0)
+
     return (
         <section
             id="registration"
-            className="bg-[#f6f6f6] py-20"
+            className="bg-[#f6f6f6] py-10"
         >
-            <div className=" mx-auto container px-3">
-                <h2 className="font-primary text-gradient-blue mb-10 text-center text-5xl italic tracking-[0.05em]">
+            <div className="mx-auto container px-20">
+                <h2 className="font-primary text-center font-normal leading-normal text-8xl italic text-gradient-blue">
                     Registration
                 </h2>
-                <div className="space-y-7">
-                    <PricingGroup
-                        title="Early Bird (10 - 26 November 2026)"
-                        items={conferenceRegistrationEarlyBird}
-                    />
+                <div className="mt-10">
+                    <div
+                        className="grid gap-2 rounded-xl bg-[#001431] p-2 sm:grid-cols-2" // change to 3 for active tabs
+                        role="tablist"
+                        aria-label="Registration pricing"
+                    >
+                        {pricingTabs.map((tab, index) => (
+                            <button
+                                key={tab.label}
+                                type="button"
+                                role="tab"
+                                aria-selected={activeTab === index}
+                                aria-controls={`pricing-panel-${index}`}
+                                id={`pricing-tab-${index}`}
+                                onClick={() => setActiveTab(index)}
+                                className={`rounded-lg px-4 py-3 text-base font-bold transition-colors duration-300 cursor-pointer sm:text-lg ${
+                                    activeTab === index
+                                        ? "bg-[#11990A] text-white"
+                                        : "text-white hover:bg-white/10"
+                                }`}
+                            >
+                                {tab.label}
+                            </button>
+                        ))}
+                    </div>
 
-                    <PricingGroup
-                        title="Regular Wave (27 November - 26 December 2026)"
-                        items={conferenceRegistrationRegularWave}
-                    />
-
-                    <PricingGroup
-                        title="Paper Submission"
-                        items={[paperSubmission]}
-                    />
+                    <div
+                        className="mt-7"
+                        role="tabpanel"
+                        id={`pricing-panel-${activeTab}`}
+                        aria-labelledby={`pricing-tab-${activeTab}`}
+                    >
+                        <PricingGroup {...pricingTabs[activeTab]} />
+                    </div>
                 </div>
             </div>
         </section>
