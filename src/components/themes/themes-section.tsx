@@ -14,14 +14,14 @@ export function ThemesSection() {
             className="bg-[#f6f6f6] py-20"
         >
             <div className="mx-auto container px-3">
-                <h2 className="font-primary text-gradient-blue text-center text-5xl font-black italic tracking-[0.05em] md:text-6xl">
+                <h2 className="font-primary text-center font-normal text-8xl italic text-gradient-blue leading-normal">
                     Themes
                 </h2>
 
                 <div className="mt-16">
                     <h3 className="text-3xl font-bold tracking-[0.04em] md:text-4xl">
             <span className="text-[#0aa31a]">
-              Conference
+                Conference
             </span>{" "}
                         <span className="text-[#073fc9]">
               Main Themes

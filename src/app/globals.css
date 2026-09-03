@@ -59,9 +59,9 @@ body {
 
 .text-gradient-blue {
     background: linear-gradient(
-            90deg,
-            #023FFC 0%,
-            #01112B 100%
+            263.07deg,
+            #01112B 20.17%,
+            #023FFC 78.36%
     );
 
     background-clip: text;
@@ -89,4 +89,11 @@ body {
 
 .bg-blue-dark{
     background-color: #022280;
+}
+
+.button-disabled {
+    background: var(--bricsed-background);
+    color: var(--bricsed-text);
+    box-shadow: inset 0px 0px 0px rgba(0,0,0,0);
+    cursor: default;
 }

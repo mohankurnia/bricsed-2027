@@ -16,26 +16,13 @@ export default function HomePage() {
         <SiteHeader />
         <main>
             <HeroSection />
-
-    <AboutSection />
-
-    <ProgramsSection />
-
+            <AboutSection />
+            <ProgramsSection />
             <SpeakersSection />
-
-
             <ThemesSection />
-
-
-    <ImportantDatesSection />
-
-    <RegistrationSection />
-
-    <SponsorsSection />
-
-
-
-
+            <ImportantDatesSection />
+            <RegistrationSection />
+            <SponsorsSection />
         </main>
             <SiteFooter />
         </>

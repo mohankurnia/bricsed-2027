@@ -1,9 +1,9 @@
 import { PricingCard } from "@/components/registration/pricing-card"
 
 import {
-    conferenceRegistration,
+    conferenceRegistrationEarlyBird,
+    conferenceRegistrationRegularWave,
     paperSubmission,
-    participantRegistration,
 } from "@/data/registration"
 
 function PricingGroup({
@@ -52,13 +52,13 @@ export function RegistrationSection() {
                 </h2>
                 <div className="space-y-7">
                     <PricingGroup
-                        title="Conferences"
-                        items={conferenceRegistration}
+                        title="Early Bird (10 - 26 November 2026)"
+                        items={conferenceRegistrationEarlyBird}
                     />
 
                     <PricingGroup
-                        title="Participant"
-                        items={participantRegistration}
+                        title="Regular Wave (27 November - 26 December 2026)"
+                        items={conferenceRegistrationRegularWave}
                     />
 
                     <PricingGroup

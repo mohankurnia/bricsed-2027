@@ -1,6 +1,6 @@
 export const conferenceDates = [
     {
-        date: "1 September 2026",
+        date: "7 September 2026",
         title: "Call for Abstract Opens",
     },
     {
@@ -8,20 +8,20 @@ export const conferenceDates = [
         title: "Call for Abstract Closes",
     },
     {
-        date: "15 November 2026",
+        date: "5 November 2026",
         title: "Abstract Acceptance Notification",
     },
     {
-        date: "15 - 30 November 2026",
+        date: "10 - 26 November 2026",
         title: "Early Bird Registration",
     },
     {
-        date: "1 - 28 December 2026",
+        date: "27 November - 26 December 2026",
         title: "Regular Registration",
     },
     {
-        date: "23 January 2027",
-        title: "Full Paper & Presentation Submission Deadline",
+        date: "16 January 2027",
+        title: "Deadline Submission for PPT (Mandatory) & Full Paper (Optional)",
     },
     {
         date: "30 - 31 January 2027",
@@ -29,7 +29,7 @@ export const conferenceDates = [
     },
     {
         date: "TBA",
-        title: "Proceedings / Journal Submission",
+        title: "Proceedings (Only for Selected Papers) & Journal Submission (Only for Selected Papers; Subject to it's Journal's Policy)",
     },
 ]
 
@@ -51,8 +51,12 @@ export const competitionDates = [
         title: "Presentation Submission Deadline",
     },
     {
-        date: "30 - 31 January 2027",
+        date: "31 January 2027",
         title: "Final Presentation",
+    },
+    {
+        date: "1 February 2027",
+        title: "Participation Certification & Awardee Certification",
     },
     {
         date: "TBA",

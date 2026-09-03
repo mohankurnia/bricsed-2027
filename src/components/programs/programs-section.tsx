@@ -5,14 +5,14 @@ export function ProgramsSection() {
     return (
         <section
             id="programs"
-            className="bg-gradient-to-b from-[#001431] to-[#0645ff]  py-20 py-20 md:py-24"
+            className="bg-[linear-gradient(180deg,rgba(246,246,246,1)_0%,rgba(2,63,252,.8)_50%,rgba(1,17,43,8)_100%)] py-20 md:py-24"
         >
-            <div className="container px-5 mx-auto">
-                <h2 className="font-primary text-center text-5xl italic tracking-[-0.05em] text-white md:text-6xl">
+            <div className="container px-5 flex flex-col gap-20 mx-auto">
+                <h2 className="font-primary text-center font-normal text-8xl italic text-gradient-blue leading-normal">
                     Programs
                 </h2>
 
-                <div className="mt-16 grid items-stretch gap-8 lg:grid-cols-2">
+                <div className="mx-auto flex gap-10 items-center">
                     <InternationalConferenceCard />
 
                     <CallForPapersCard />

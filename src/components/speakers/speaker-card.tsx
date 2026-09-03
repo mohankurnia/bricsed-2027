@@ -3,39 +3,45 @@ import Image from "next/image"
 type SpeakerCardProps = {
     name: string
     image: string
-    description: string
+    title: string
+    variant?: "blue" | "green"
+    status: string
+}
+
+const speakerVariantClasses = {
+    blue: "bg-[linear-gradient(180deg,#f6f6f6_10%,#023FFC_110%)]",
+    green: "bg-[linear-gradient(180deg,#f6f6f6_10%,#11990A_110%)]",
 }
 
 export function SpeakerCard({
                                 name,
                                 image,
-                                description,
+                                title,
+                                variant = "blue",
+                                status
                             }: SpeakerCardProps) {
     return (
-        <article className="relative overflow-hidden rounded-[18px] bg-[#f5f5f5]">
+        <div className={`relative flex w-max-[300px] w-full h-100 overflow-hidden rounded-[20px] border-4 border-white transition-all duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(0,0,0,.10)] cursor-pointer ${speakerVariantClasses[variant]}`}>
             {/* Image area */}
-            <div className="relative h-[250px]">
+            <div>
                 <Image
                     src={image}
                     alt={name}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-top drop-shadow-2xl"
                 />
-
-                {/* Fade image ke card */}
-                <div className="absolute inset-x-0 bottom-0 h-[90px] bg-gradient-to-b from-transparent to-[#f5f5f5]" />
             </div>
 
             {/* Content */}
-            <div className="relative -mt-5 px-4 pb-5">
-                <h3 className="font-primary text-[25px] leading-none tracking-[-0.03em] text-[#001431]">
+            <div className={`relative w-full bg-[#F6F6F6] border border-[#969696] mx-1.5 ${ status === `confirmed` ? `mb-1.5` : `mb-auto`} mb-1.5 mt-auto py-3 px-4 rounded-2xl flex flex-col gap-2 justify-center items-center shadow-2xl`}>
+                <h3 className="font-primary text-2xl font-bold leading-none tracking-wide text-[#021431] text-center">
                     {name}
                 </h3>
 
-                <p className="mt-2 text-[11px] leading-[1.05] text-[#9b9b9b]">
-                    {description}
+                <p className="text-[14px] font-semibold leading-none text-[#969696] text-center">
+                    {title}
                 </p>
             </div>
-        </article>
+        </div>
     )
 }

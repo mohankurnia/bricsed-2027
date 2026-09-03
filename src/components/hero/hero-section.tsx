@@ -1,14 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 
 import { conference } from "@/data/conference"
+import { internationalConference } from "@/data/programs"
 
 export function HeroSection() {
     return (
         <section
             id="home"
-            className="relative px-4 pt-4 sm:px-5 sm:pt-5"
-        >
+            className="relative mx-5 mt-5 sm:mt-5 scroll-mt-20"
+        > 
             <div
                 className="relative min-h-[620px] overflow-hidden rounded-t-[26px] text-white md:min-h-[650px]"
                 style={{
@@ -27,44 +29,45 @@ export function HeroSection() {
                     className="absolute inset-0"
                     style={{
                         background:
-                            "linear-gradient( rgba(1, 17, 43, .99) 20%, rgba(2, 63, 252, .8) 90%)",
+                            "linear-gradient(180deg, rgba(1, 17, 43, .9) 20%, rgba(2, 63, 252, .8) 50%, rgba(17, 153, 10, 0.4) 90%)",
                     }}
                 />
 
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(91,132,255,.35),transparent_35%)]" />
 
 
-                <div className="relative z-10 mx-auto flex min-h-[620px] w-[min(1240px,calc(100%-40px))] flex-col items-center justify-center pb-20 pt-28 text-center md:min-h-[650px]">
-                    <div className="mb-10 rounded-full border border-white/25 bg-white/[0.03] px-5 py-2.5 text-xs shadow-[0_10px_35px_rgba(0,0,0,.15)] backdrop-blur-sm sm:text-sm md:px-8 md:text-[16px]">
-                        {conference.date} · {conference.venue}
+                <div className="relative z-10 mx-auto flex gap-7 min-h-[620px] w-[min(1240px,calc(100%-40px))] flex-col items-center justify-center pb-20 pt-28 text-center md:min-h-[650px]">
+                    <div className="flex gap-2 items-center rounded-full border px-5 py-2.5 text-xs shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs sm:text-sm md:px-8 md:text-[16px]">
+                        {conference.date}
+                        <div className="size-1.5 shrink-0 rounded-full bg-[#F6F6F6]"></div>
+                        {conference.venue}
                     </div>
+                    <div className="flex flex-col gap-4 items-center">    
+                        <h1 className="font-primary text-[clamp(4rem,10vw,8.3rem)] tracking-[0.05em] font-black italic leading-[0.82] ">
+                            BRICSED 2027
+                        </h1>
 
-                    <h1 className="font-primary text-[clamp(4rem,10vw,8.3rem)] tracking-[0.05em] font-black italic leading-[0.82] ">
-                        BRICSED 2027
-                    </h1>
-
-                    <p className="mt-8 max-w-5xl text-lg font-bold italic leading-tight sm:text-xl md:text-[22px]">
-                        {conference.fullName}
-                    </p>
-
-                    <p className="mt-6 text-base italic text-white/90 md:text-lg">
+                        <p className="max-w-5xl text-lg font-semibold italic sm:text-xl md:text-[22px]">
+                            {conference.fullName}
+                        </p>
+                    </div>
+                    <p className="text-base font-light text-white/90 md:text-lg">
                         Organized by{" "}
-                        <span className="font-bold">
-              {conference.organizer}
-            </span>
+                        <span className="font-bold">{conference.organizer}</span>
                     </p>
 
-                    <div className="mt-7 flex flex-col gap-4 sm:flex-row">
+                    <div className="flex flex-col gap-4 sm:flex-row">
                         <Link
-                            href="#registration"
-                            className="rounded-full border border-white bg-[#001431] px-8 py-3 text-lg font-bold shadow-lg transition hover:-translate-y-0.5 hover:bg-[#05245b]"
+                            href={internationalConference.registration_link}
+                            target="_blank"
+                            className="rounded-full border border-white bg-[#001431] px-8 py-3 text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] transition hover:-translate-y-0.5 hover:bg-[#05245b]"
                         >
                             Conference Call for Abstract
                         </Link>
 
                         <Link
                             href="#programs"
-                            className="rounded-full border border-white/20 bg-white/[0.04] px-8 py-3 text-lg font-bold shadow-lg backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/10"
+                            className="rounded-full border bg-[rgba(0,0,0,0.1)] px-8 py-3 text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs transition hover:-translate-y-0.5 hover:bg-white/10"
                         >
                             International Student Paper Competition
                         </Link>
@@ -73,10 +76,10 @@ export function HeroSection() {
                     <Link
                         href="#about"
                         aria-label="Scroll to about section"
-                        className="absolute bottom-12 transition hover:translate-y-1"
+                        className="absolute top-5/6 bottom-12 transition hover:translate-y-1"
                     >
                         <div className="flex flex-col items-center">
-                            <ChevronDown
+                            {/* <ChevronDown
                                 size={46}
                                 strokeWidth={4}
                             />
@@ -84,7 +87,8 @@ export function HeroSection() {
                                 size={46}
                                 strokeWidth={4}
                                 className="-mt-8"
-                            />
+                            /> */}
+                            <img src="/logos/hero_scroll.svg" alt="Scroll down" />
                         </div>
                     </Link>
                 </div>

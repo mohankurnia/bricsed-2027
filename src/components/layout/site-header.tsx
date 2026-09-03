@@ -30,7 +30,7 @@ export function SiteHeader() {
             className={[
                 "fixed inset-x-0 top-0 z-50 transition-all duration-300",
                 isScrolled
-                    ? "bg-[#001431]/90 shadow-[0_8px_30px_rgba(0,0,0,0.15)] backdrop-blur-xl"
+                    ? "bg-[#001431]/50 shadow-[0_8px_30px_rgba(0,0,0,0.15)] backdrop-blur-xl"
                     : "bg-transparent",
             ].join(" ")}
         >
@@ -63,7 +63,7 @@ export function SiteHeader() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="text-[15px] font-medium text-white/70 transition-colors hover:text-white"
+                            className=" text-[15px] font-medium text-white/70 transition-all duration-300 hover:text-white hover:[text-shadow:0_0_40px_#F6F6F6,0_0_30px_#F6F6F6]"
                         >
                             {item.label}
                         </Link>
