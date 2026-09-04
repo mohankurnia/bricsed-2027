@@ -2,45 +2,47 @@ import Image from "next/image"
 import {
     FileText,
     MessageCircle,
-    Phone,
 } from "lucide-react"
 
 const contacts = [
-    {
-        label: "Main Contact",
-        icon: Phone,
-        contactPerson: "John",
-        contactLink: "#",
-    },
+    // {
+    //     label: "Main Contact",
+    //     icon: Phone,
+    //     contactPerson: "John",
+    //     contactLink: "#",
+    // },
     {
         label: "International Conference",
         icon: MessageCircle,
-        contactPerson: "John",
-        contactLink: "#",
+        contactPerson: "Kia",
+        contactLink: "https://wa.me/+6282143126373",
     },
     {
         label: "International Student Paper Competition",
         icon: FileText,
-        contactPerson: "John",
-        contactLink: "#",
+        contactPerson: "Clara",
+        contactLink: "https://wa.me/+6282112574665",
     },
 ]
 
 const socials = [
     {
         media: "Email",
+        name: "bricsed@ub.ac.id",
         icon: "/mail.png",
-        mediaLink: "#",
+        mediaLink: "https://mail.google.com/mail/?view=cm&fs=1&to=bricsed%40ub.ac.id",
     },
     {
         media: "Instagram",
+        name: "bricsed_official",
         icon: "/instagram.png",
-        mediaLink: "#",
+        mediaLink: "https://www.instagram.com/bricsed_official/",
     },
     {
         media: "Tiktok",
+        name: "@bricsed_official",
         icon: "/tiktok.png",
-        mediaLink: "#",
+        mediaLink: "https://www.tiktok.com/@bricsed_official",
     },
 ]
 
@@ -78,6 +80,7 @@ export function SiteFooter() {
 
                                 <a 
                                     href={`${contactLink}`}
+                                    target="_blank"
                                     className="
                                         mt-auto text-md font-semibold text-center
                                         rounded-md px-4 py-2
@@ -104,23 +107,26 @@ export function SiteFooter() {
                     </div>
 
                     {/* Media Social */}
-                    <div className="flex shrink-0 items-center justify-center gap-5">
-                        {socials.map(({ media, icon, mediaLink }) => (
-                            <a
-                                key={media}
-                                href={mediaLink}
-                                aria-label={`Visit our ${media} page`}
-                                title={media}
-                                className="flex size-11 items-center justify-center rounded-full bg-[#f6f6f6] p-2.5 transition duration-300 hover:-translate-y-1 hover:bg-[#11990A] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                            >
-                                <Image
-                                    src={icon}
-                                    alt=""
-                                    width={24}
-                                    height={24}
-                                    className="size-6 object-contain"
-                                />
-                            </a>
+                    <div className="flex flex-col shrink-0 items-center justify-end gap-3">
+                        {socials.map(({ media, name, icon, mediaLink }) => (
+                            <div key={media} className="flex gap-4 items-center justify-end w-full">
+                                <p>{name}</p>
+                                <a
+                                    href={mediaLink}
+                                    target="_blank"
+                                    aria-label={`Visit our ${media} page`}
+                                    title={media}
+                                    className="flex size-11 items-center justify-center rounded-full bg-[#f6f6f6] p-2.5 transition duration-300 hover:-translate-y-1 hover:bg-[#11990A] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                                >
+                                    <Image
+                                        src={icon}
+                                        alt=""
+                                        width={24}
+                                        height={24}
+                                        className="size-6 object-contain"
+                                    />
+                                </a>
+                            </div>
                         ))}
                     </div>
                 </div>

@@ -65,7 +65,7 @@ export function CallForPapersCard() {
 
                 {/* CTA */}
                 <a
-                    href={callForPapers.registration_link}
+                    // href={callForPapers.registration_link}
                     target="_blank"
                     className="mt-auto flex content-end min-h-14.5 items-center justify-center rounded-full text-xl font-bold bricsed-gradient px-7 text-white shadow-[inset_0px_8px_60px_rgba(0,0,0,.3)] transition-transform hover:scale-[1.01] button-disabled"
                 >

@@ -22,7 +22,7 @@ export default function HomePage() {
             <ThemesSection />
             <ImportantDatesSection />
             <RegistrationSection />
-            <SponsorsSection />
+            {/* <SponsorsSection /> */}
         </main>
             <SiteFooter />
         </>
