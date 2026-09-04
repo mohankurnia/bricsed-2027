@@ -64,8 +64,8 @@ export function Countdown() {
     ]
 
     return (
-        <div className="rounded-2xl bg-linear-to-b from-[#0ab314] to-[#06780d] px-16 py-5 shadow-xl">
-            <h3 className="text-center text-2xl font-bold leading-none text-white">
+        <div className="rounded-2xl bg-linear-to-b from-[#0ab314] to-[#06780d] px-4 md:px-16 py-5 shadow-xl">
+            <h3 className="text-center text-[18px] md:text-2xl font-bold leading-none text-white">
                 Countdown to Conference
             </h3>
 
@@ -73,9 +73,9 @@ export function Countdown() {
                 {countdownItems.map((item) => (
                     <div key={item.label} className="text-center">
                         <div className="flex aspect-square items-center justify-center rounded-[12px] bg-[#f7f7f7] px-2 text-[#001431] shadow-sm">
-                <span className="text-[30px] font-bold leading-none tracking-[-0.04em]">
-                    {String(item.value).padStart(2, "0")}
-                </span>
+                            <span className="text-[30px] font-bold leading-none tracking-[-0.04em]">
+                                {String(item.value).padStart(2, "0")}
+                            </span>
                         </div>
 
                         <p className="mt-1.5 text-[12px] leading-none text-white">

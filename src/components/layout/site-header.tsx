@@ -50,8 +50,8 @@ export function SiteHeader() {
         >
             <div
                 className={[
-                    "container mx-auto p-5 flex w-[min(1240px,calc(100%-48px))] items-center justify-between transition-all duration-300",
-                    isScrolled ? "h-18" : "h-35",
+                    "container mx-auto p-0 md:p-5 flex w-[min(1240px,calc(100%-48px))] items-center justify-between transition-all duration-300",
+                    isScrolled ? "h-15 md:h-18" : "h-20 md:h-35",
                 ].join(" ")}
             >
                 {/* Logo */}
@@ -65,8 +65,8 @@ export function SiteHeader() {
                         className={[
                             "h-auto object-contain transition-all duration-300",
                             isScrolled
-                                ? "w-36.25"
-                                : "w-43.75 md:w-47.5",
+                                ? "w-25.75 md:w-36.25"
+                                : "w-30.75 md:w-47.5",
                         ].join(" ")}
                     />
                 </Link>

@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
 
 import { conference } from "@/data/conference"
 import { internationalConference } from "@/data/programs"
@@ -10,10 +9,12 @@ export function HeroSection() {
     return (
         <section
             id="home"
-            className="relative mx-5 mt-5 sm:mt-5 scroll-mt-20"
+            className="relative 
+                mx-0 mt-0 md:mt-5 md:mx-5 
+                scroll-mt-20"
         > 
             <div
-                className="relative flex min-h-[750px] overflow-hidden rounded-t-[26px] text-white"
+                className="relative flex min-h-[750px] overflow-visible md:overflow-hidden rounded-t-[26px] text-white"
                 style={{
                     clipPath:
                         "polygon(0 0, 100% 0, 100% 84%, 50% 100%, 0 84%)",
@@ -37,16 +38,14 @@ export function HeroSection() {
                     }}
                 />
 
-                {/* <div className="relative z-10 mx-auto flex gap-7 min-h-[620px] w-[min(1240px,calc(100%-40px))] flex-col items-center justify-center pb-20 pt-28 text-center md:min-h-[650px]">
-                </div> */}
-                <div className="relative mx-auto flex flex-col items-center mt-35 mb-10 gap-7 text-center">
-                    <div className="flex gap-2 items-center rounded-full border px-5 py-2.5 text-xs shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs sm:text-sm md:px-8 md:text-[16px]">
-                        {conference.date}
-                        <div className="size-1.5 shrink-0 rounded-full bg-[#F6F6F6]"></div>
-                        {conference.venue}
+                <div className="relative mx-auto flex flex-col px-4 lg:px-0 items-center mt-25 md:mt-35 mb-10 gap-5 md:gap-7 text-center">
+                    <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 items-center rounded-full border px-5 py-2.5 text-xs shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs sm:text-sm md:px-8 md:text-[16px]">
+                        <p>{conference.date}</p>
+                        <div className="size-1.5 shrink-0 rounded-full bg-[#F6F6F6] hidden sm:block"></div>
+                        <p>{conference.venue}</p>
                     </div>
 
-                    <p className="text-center text-[16px] text-white">
+                    <p className="text-center text-[12px] md:text-[16px] text-white">
                         Organized by International Relations Department, Faculty of Social and Political Sciences, Universitas Brawijaya
                     </p>
 
@@ -55,7 +54,7 @@ export function HeroSection() {
                             BRICSED 2027
                         </h1>
 
-                        <p className="max-w-5xl text-lg font-semibold italic sm:text-xl md:text-[22px]">
+                        <p className="max-w-5xl text-md font-semibold italic sm:text-xl md:text-[22px]">
                             {conference.fullName}
                         </p>
                     </div>
@@ -67,14 +66,14 @@ export function HeroSection() {
                         <Link
                             href={internationalConference.registration_link}
                             target="_blank"
-                            className="rounded-full border border-white bg-[#001431] px-8 py-3 text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] transition hover:-translate-y-0.5 hover:bg-[#05245b]"
+                            className="rounded-full border border-white bg-[#001431] px-4 sm:px-8 py-3 text-[12px] sm:text-[14px] md:text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] transition hover:-translate-y-0.5 hover:bg-[#05245b]"
                         >
                             International Conference
                         </Link>
 
                         <Link
                             href="#programs"
-                            className="rounded-full border bg-[rgba(0,0,0,0.1)] px-8 py-3 text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs transition hover:-translate-y-0.5 hover:bg-white/10"
+                            className="rounded-full border bg-[rgba(0,0,0,0.1)] px-4 sm:px-8 py-3 text-[12px] sm:text-[14px] md:text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs transition hover:-translate-y-0.5 hover:bg-white/10"
                         >
                             International Student Paper Competition
                         </Link>
@@ -87,16 +86,6 @@ export function HeroSection() {
                         className="transition hover:translate-y-1"
                     >
                         <div className="flex flex-col items-center">
-                            {/* <ChevronDown
-                                size={46}
-                                strokeWidth={4}
-                            />
-
-                            <ChevronDown
-                                size={42}
-                                strokeWidth={4}
-                                className="-mt-8"
-                            /> */}
                             <img src="/logos/hero_scroll.svg" alt="Scroll down" />
                         </div>
                     </Link>
