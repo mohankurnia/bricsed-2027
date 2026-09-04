@@ -47,13 +47,17 @@ export function Countdown() {
     })
 
     useEffect(() => {
-        setTime(getRemainingTime())
+        const updateTime = () => setTime(getRemainingTime())
+        const initialUpdate = window.setTimeout(updateTime, 0)
 
         const interval = setInterval(() => {
-            setTime(getRemainingTime())
+            updateTime()
         }, 1000)
 
-        return () => clearInterval(interval)
+        return () => {
+            window.clearTimeout(initialUpdate)
+            clearInterval(interval)
+        }
     }, [])
 
     const countdownItems = [
@@ -72,7 +76,7 @@ export function Countdown() {
             <div className="mt-5 grid grid-cols-4 gap-3">
                 {countdownItems.map((item) => (
                     <div key={item.label} className="text-center">
-                        <div className="flex aspect-square items-center justify-center rounded-[12px] bg-[#f7f7f7] px-2 text-[#001431] shadow-sm">
+                        <div className="flex aspect-square items-center justify-center rounded-xl bg-[#f7f7f7] px-2 text-[#001431] shadow-sm">
                             <span className="text-[30px] font-bold leading-none tracking-[-0.04em]">
                                 {String(item.value).padStart(2, "0")}
                             </span>
