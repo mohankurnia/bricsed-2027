@@ -18,13 +18,13 @@ export default function HomePage() {
             <HeroSection />
             <AboutSection />
             <ProgramsSection />
-            {/* <SpeakersSection /> */}
-            {/* <ThemesSection /> */}
-            {/* <ImportantDatesSection /> */}
-            {/* <RegistrationSection /> */}
+            <SpeakersSection />
+            <ThemesSection />
+            <ImportantDatesSection />
+            <RegistrationSection />
             {/* <SponsorsSection /> */}
         </main>
-            {/* <SiteFooter /> */}
+            <SiteFooter />
         </>
     )
 }

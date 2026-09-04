@@ -16,14 +16,14 @@ export const conferenceDates = [
     },
     {
         date: "10 - 26 November 2026",
-        title: "Early Bird Registration",
+        title: "Early Bird Payment Registration",
         status: "not yet"
     },
-    {
-        date: "27 November - 26 December 2026",
-        title: "Regular Registration",
-        status: "not yet"
-    },
+    // {
+    //     date: "27 November - 26 December 2026",
+    //     title: "Regular Registration",
+    //     status: "not yet"
+    // },
     {
         date: "16 January 2027",
         title: "Deadline Submission for PPT (Mandatory) & Full Paper (Optional)",
@@ -36,7 +36,7 @@ export const conferenceDates = [
     },
     {
         date: "TBA",
-        title: "Proceedings (Only for Selected Papers) & Journal Submission (Only for Selected Papers, subject to it's Journal's Policy)",
+        title: "Proceedings (Only for Selected Papers) & Journal Submission (Only for Selected Papers, subject to each Journal's Policy)",
         status: "not yet"
     },
 ]
@@ -53,7 +53,7 @@ export const competitionDates = [
         status: "not yet"
     },
     {
-        date: "6 January 2027",
+        date: "23 Desember 2026",
         title: "Finalist Announcement",
         status: "not yet"
     },

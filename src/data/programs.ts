@@ -25,7 +25,7 @@ export const callForPapers = {
     title: "International Student Paper Competition",
 
     description:
-        "The paper competition provides a platform for undergraduate students to present academic papers on Energy, Sustainability, and Development. Students must pick one of the five subthemes that are derived from the main theme to develop their papers.",
+        "The paper competition provides a platform for undergraduate students to present academic papers on Sustainability, Energy, and Development. Students must pick one of the five subthemes that are derived from the main theme to develop their papers.",
 
     papersFormat: 
         "Online",
