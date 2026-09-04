@@ -23,7 +23,12 @@ export function ImportantDatesSection() {
                         </span>
                     </h3>
 
-                    <DateList items={conferenceDates} />
+                    <DateList
+                        items={conferenceDates.map((item) => ({
+                            ...item,
+                            status: item.status as "now" | "not yet",
+                        }))}
+                    />
                 </div>
 
                 <div className="flex flex-col gap-4 mt-10 px-20">
@@ -36,7 +41,12 @@ export function ImportantDatesSection() {
                         </span>
                     </h3>
 
-                    <DateList items={competitionDates} />
+                    <DateList
+                        items={competitionDates.map((item) => ({
+                            ...item,
+                            status: item.status as "now" | "not yet",
+                        }))}
+                    />
                 </div>
             </div>
         </section>
