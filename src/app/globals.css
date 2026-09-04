@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+    --bricsed-navy: #01112B;
+    --bricsed-blue: #023FFC;
+    --bricsed-blue-dark: #082e9f;
+    --bricsed-green: #11990A;
+    --bricsed-text: #021431;
+    --bricsed-muted: #969696;
+    --bricsed-background: #f6f6f6;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bricsed-background);
+    color: var(--bricsed-text);
+
+    font-family: var(--font-instrument-sans), sans-serif;
+
+}
+
+.font-primary {
+    font-family: var(--font-coolvetica), sans-serif;
+}
+
+.font-secondary {
+    font-family: var(--font-instrument-sans), sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background: var(--bricsed-blue);
+    color: white;
+}
+
+.bricsed-gradient {
+    background:
+            linear-gradient(
+                    180deg,
+                    #001431 0%,
+                    #052c94 54%,
+                    #063fff 100%
+            );
+}
+
+.section-container {
+    width: min(1240px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.text-gradient-blue {
+    background: linear-gradient(
+            263.07deg,
+            #01112B 20.17%,
+            #023FFC 78.36%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-green-blue {
+    background: linear-gradient(
+            90deg,
+            #0aa31a 0%,
+            #0aa31a 30%,
+            #064cff 65%,
+            #001f68 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-blue-dark{
+    background-color: #022280;
+}
+
+.button-disabled {
+    background: var(--bricsed-background);
+    color: var(--bricsed-text);
+    box-shadow: inset 0px 0px 0px rgba(0,0,0,0);
+    cursor: default;
+}
