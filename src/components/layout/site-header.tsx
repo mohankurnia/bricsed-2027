@@ -101,6 +101,9 @@ export function SiteHeader() {
                                 key={item.href}
                                 href={item.href}
                                 aria-current={activeSection === item.href ? "page" : undefined}
+                                onClick={(event) => {
+                                    event.currentTarget.closest("details")?.removeAttribute("open")
+                                }}
                                 className={`block rounded-xl px-4 py-3 text-sm transition hover:bg-white/10 hover:text-white ${
                                     activeSection === item.href
                                         ? "bg-white/10 text-white"

@@ -82,11 +82,11 @@ export function ThemeModal({
                         <X size={26} />
                     </button>
 
-                    <h3 className="font-primary pr-10 text-2xl leading-none">
+                    <h3 className="font-primary pr-10 text-lg md:text-2xl leading-none">
                         {modalContent.title}
                     </h3>
 
-                    <p className="mt-6 pr-4 text-[14px] leading-4 text-justify">
+                    <p className="mt-4 md:mt-6 pr-0 sm:pr-8 text-[12px] md:text-[14px] leading-4 text-justify">
                         {modalContent.description}
                     </p>
                 </div>
@@ -98,13 +98,13 @@ export function ThemeModal({
                             SDGs
                         </div>
 
-                        <div className="flex justify-center gap-8 px-6 py-6">
+                        <div className="flex justify-start sm:justify-center gap-4 md:gap-8 p-4 md:p-6 overflow-x-scroll">
                             {modalContent.sdgs.map((sdg, index) => (
                                 <img
                                     key={`${sdg.id}-${index}`}
                                     src={sdg.image}
                                     alt={sdg.label}
-                                    className="h-21.5 w-21.5 object-contain cursor-pointer transition-all duration-300 hover:scale-105"
+                                    className="h-15.5 w-15.5 md:h-21.5 md:w-21.5 object-contain cursor-pointer transition-all duration-300 hover:scale-105"
                                 />
                             ))}
                         </div>

@@ -1,21 +1,34 @@
+import Image from "next/image"
+
 type SubThemeCardProps = {
     title: string
     label: string
+    image: string
     onViewMore: () => void
 }
 
 export function SubThemeCard({
                             title,
                             label,
+                            image,
                             onViewMore,
                         }: SubThemeCardProps) {
     return (
         <article className="flex min-h-[220px] flex-col rounded-[18px] bg-white p-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(0,0,0,.10)]">
-            <h3 className="text-xl font-bold leading-none text-[#001431]">
+            <div className="relative aspect-4/1 lg:aspect-[2.15/1] overflow-hidden rounded-xl">
+                <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                />
+            </div>
+
+            <h3 className="mt-4 text-xl font-bold leading-none text-[#001431]">
                 {title}
             </h3>
 
-            <p className="mt-1 text-lg text-zinc-400">
+            <p className="mt-1 text-md md:text-lg text-zinc-400">
                 {label}
             </p>
 
@@ -24,7 +37,7 @@ export function SubThemeCard({
                 onClick={onViewMore}
                 className="mt-auto pt-5 cursor-pointer"
             >
-                <span className="flex min-h-[48px] items-center justify-center rounded-xl bg-[#f5f5f5] text-sm font-medium transition duration-500 hover:bg-[#023FFC] hover:font-bold hover:text-white">
+                <span className="flex min-h-[48px] items-center justify-center rounded-xl bg-[#f5f5f5] text-sm text-[#021431] font-medium transition duration-500 hover:bg-[#023FFC] hover:font-bold hover:text-white">
                     View more
                 </span>
             </button>

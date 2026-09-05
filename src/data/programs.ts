@@ -19,6 +19,8 @@ export const internationalConference = {
         "30 - 31 January 2027",
 
     registration_link: "https://s.ub.ac.id/abstractbricsed",
+
+    guidelines: "#"
 }
 
 export const callForPapers = {
@@ -37,4 +39,6 @@ export const callForPapers = {
         "31 January 2027",
 
     registration_link: "",
+
+    guidelines: "#"
 }
