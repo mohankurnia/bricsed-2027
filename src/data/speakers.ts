@@ -1,4 +1,4 @@
-export const speakers = [
+export const panelists = [
     {
         id: "speaker-1",
         name: "Prof. Devanto Shasta Pratomo S.E., M.Si., Ph.D.",
@@ -17,14 +17,24 @@ export const speakers = [
         id: "speaker-3",
         name: "To be Announced",
         image: "/tba-speaker.png",
-        title: "Coming Soon",
+        title: "Researcher from an Acclaimed Japanese Institution",
         status: "unconfirmed"
     },
     {
         id: "speaker-4",
         name: "To be Announced",
         image: "/tba-speaker.png",
-        title: "Coming Soon",
+        title: "Researcher from the National Research and Innovation Agency of Indonesia",
         status: "unconfirmed"
+    },
+]
+
+export const keynotes = [
+    {
+        id: "speaker-1",
+        name: "To be Announced",
+        image: "/tba-speaker.png",
+        title: "Coming Soon",
+        status: "unconfirmed",
     },
 ]

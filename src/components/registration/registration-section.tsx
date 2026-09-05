@@ -27,23 +27,23 @@ function PricingGroup({
     program: string
 }) {
     return (
-        <div className="rounded-[14px] bg-linear-to-b from-[#001431] via-[#05287e] to-[#0645ff] p-10">
+        <div className="rounded-[14px] bg-linear-to-b from-[#001431] via-[#05287e] to-[#0645ff] p-4 lg:p-10">
             <p className="text-center text-md font-semibold bg-[#11990A] mx-auto w-fit px-5 py-2 rounded-full text-white">
                 {program}
             </p>
 
-            <h2 className="text-center text-5xl font-bold text-white mt-5 mb-2">
+            <h2 className="text-center text-3xl md:text-5xl font-bold text-white mt-5 mb-0 md:mb-2">
                 {title}
             </h2>
 
-            <p className="text-center text-xl text-white mb-5">
+            <p className="text-center text-md md:text-xl text-white mb-5">
                 {date}
             </p>
 
             <div
                 className={
                     items.length > 1
-                        ? "grid gap-10 md:grid-cols-2"
+                        ? "grid gap-4 lg:gap-8 xl:gap-10 md:grid-cols-2"
                         : "grid"
                 }
             >
@@ -55,7 +55,7 @@ function PricingGroup({
                 ))}
             </div>
 
-            <div className="mt-10 mx-auto flex justify-center">
+            <div className="mt-5 md:mt-10 mx-auto flex justify-center">
                 <Link
                     href={internationalConference.registration_link}
                     target="_blank"
@@ -100,11 +100,11 @@ export function RegistrationSection() {
             id="registration"
             className="bg-[#f6f6f6] py-10"
         >
-            <div className="mx-auto container px-20">
-                <h2 className="font-primary text-center font-normal leading-normal text-8xl italic text-gradient-blue">
+            <div className="mx-auto container px-3 md:px-10 lg:px-20">
+                <h2 className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue leading-normal">
                     Registration
                 </h2>
-                <div className="mt-10">
+                <div className="mt-5 md:mt-10">
                     <div
                         className="grid gap-2 rounded-xl bg-[#001431] p-2 sm:grid-cols-2" // change to 3 for active tabs
                         role="tablist"
@@ -131,7 +131,7 @@ export function RegistrationSection() {
                     </div>
 
                     <div
-                        className="mt-7"
+                        className="mt-5 md:mt-7"
                         role="tabpanel"
                         id={`pricing-panel-${activeTab}`}
                         aria-labelledby={`pricing-tab-${activeTab}`}

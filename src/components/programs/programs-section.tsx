@@ -12,7 +12,7 @@ export function ProgramsSection() {
                     Programs
                 </h2>
 
-                <div className="mx-auto flex flex-col md:flex-row gap-5 md:gap-10 items-center">
+                <div className="mx-auto flex flex-col items-stretch md:flex-row gap-5 md:gap-7 lg:gap-10 items-center">
                     <InternationalConferenceCard />
 
                     <CallForPapersCard />

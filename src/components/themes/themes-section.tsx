@@ -17,7 +17,7 @@ type SelectedTheme = {
     title: string
     label: string
     description: string
-    image?: string
+    thumbImage?: string
     sdgs: {
         id: number
         label: string
@@ -33,26 +33,26 @@ export function ThemesSection() {
         <>
             <section
                 id="themes"
-                className="bg-[#f6f6f6] py-10 scroll-mt-10"
+                className="mx-4 md:mx-5 relative overflow-hidden bg-[#f6f6f6] py-10 text-white scroll-mt-10"
             >
-                <div className="mx-auto container px-20">
-                    <h2 className="font-primary text-center font-normal text-8xl italic text-gradient-blue">
+                <div className="mx-auto container px-0 sm:px-10 md:px-20">
+                    <h2 className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue">
                         Themes
                     </h2>
 
-                    <div className="mt-10">
-                        <h3 className="text-3xl font-bold text-center md:text-5xl">
+                    <div className="mt-5 lg:mt-10">
+                        <h3 className="text-xl sm:text-3xl lg:text-5xl font-bold text-center">
                             <span className="text-[#0aa31a]">International Conference</span>
                             {" "}
                             <span className="text-gradient-blue">Main Themes</span>
                         </h3>
 
-                        <div className="mt-6 grid gap-5 md:grid-cols-3">
+                        <div className="mt-6 grid gap-5 lg:grid-cols-3">
                             {mainThemes.map((theme) => (
                                 <ThemeCard
                                     key={theme.id}
                                     title={theme.title}
-                                    image={theme.image}
+                                    thumbImage={theme.thumbImage}
                                     label={theme.label}
                                     onViewMore={() => setSelectedTheme(theme)}
                                 />
@@ -62,7 +62,7 @@ export function ThemesSection() {
 
                     {/* SUB THEMES */}
                     <div className="mt-10">
-                        <h3 className="font-primary text-3xl text-center md:text-4xl">
+                        <h3 className="font-primary text-xl sm:text-2xl lg:text-4xl text-center">
                             <span className="text-[#11990A]">International Conference</span>
                             {" "}
                             <span className="text-gradient-blue">Sub Themes</span>
@@ -74,6 +74,7 @@ export function ThemesSection() {
                                     key={theme.id}
                                     title={theme.title}
                                     label={theme.label}
+                                    image={theme.thumbImage}
                                     onViewMore={() => setSelectedTheme(theme)}
                                 />
                             ))}
@@ -82,7 +83,7 @@ export function ThemesSection() {
 
                     {/* PAPER THEMES */}
                     <div className="mt-10">
-                        <h3 className="font-primary text-3xl text-center md:text-5xl">
+                        <h3 className="font-primary text-xl sm:text-3xl lg:text-5xl text-center">
                             <span className="text-[#11990A]">International Paper</span>
                             {" "}
                             <span className="text-gradient-blue">Student Competition Themes</span>
@@ -94,6 +95,7 @@ export function ThemesSection() {
                                     key={theme.id}
                                     title={theme.title}
                                     label={theme.label}
+                                    image={theme.thumbImage}
                                     onViewMore={() => setSelectedTheme(theme)}
                                 />
                             ))}

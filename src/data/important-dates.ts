@@ -1,17 +1,17 @@
 export const conferenceDates = [
     {
         date: "7 September 2026",
-        title: "Call for Abstract Opens",
+        title: "Call for Abstracts Opens",
         status: "now"
     },
     {
         date: "31 October 2026",
-        title: "Call for Abstract Closes",
+        title: "Call for Abstracts Closes",
         status: "not yet"
     },
     {
         date: "5 November 2026",
-        title: "Abstract Acceptance Notification",
+        title: "Abstracts Acceptance Notification",
         status: "not yet"
     },
     {
@@ -31,12 +31,12 @@ export const conferenceDates = [
     },
     {
         date: "30 - 31 January 2027",
-        title: "Conference Begins",
+        title: "Conference Days",
         status: "not yet"
     },
     {
         date: "TBA",
-        title: "Proceedings (Only for Selected Papers) & Journal Submission (Only for Selected Papers, subject to each Journal's Policy)",
+        title: "Proceedings (Only for Selected Papers) & Journal Submission (Only for Selected Papers, subject to each journal's policy)",
         status: "not yet"
     },
 ]

@@ -52,29 +52,28 @@ export function SiteFooter() {
             id="contact"
             className="bg-[linear-gradient(180deg,rgba(246,246,246,1)_0%,rgba(2,63,252,.8)_30%,rgba(1,17,43,8)_100%)] text-white"
         >
-            <div className="mx-auto container px-20 grid gap-12 py-16 md:grid-cols-2 md:items-center">
+            <div className="mx-auto container px-3 md:px-10 lg:px-20 grid gap-6 md:gap-12 py-16 lg:grid-cols-2 lg:items-center">
                 <div>
-                    <h2 className="text-6xl font-black text-shadow-lg">
+                    <h2 className="text-center lg:text-left text-5xl lg:text-6xl font-black text-shadow-lg">
                         Contact Us
                     </h2>
 
-                    <div className="mt-8 space-y-2 flex">
+                    <div className="mt-4 md:mt-8 space-y-2 flex items-stretch justify-center lg:justify-start">
                         {contacts.map(({ label, icon: Icon, contactPerson, contactLink }) => (
                             <div
                                 key={label} 
                                 className="
                                     flex flex-col gap-3
-                                    
-                                    max-w-60 h-55 w-full p-4
+                                    max-w-60 w-full h-55 p-4
                                     rounded-md"
                             >
                                 <div className="bg-[#01112B] w-fit p-3 rounded-full">    
                                     <Icon className="
-                                        size-7"
+                                        size-5 md:size-7"
                                     />
                                 </div>
                                 
-                                <p className="text-[#F6F6F6] leading-none text-lg font-semibold">
+                                <p className="text-[#F6F6F6] leading-none text-[16px] md:text-lg font-semibold">
                                     {label}
                                 </p>
 
@@ -82,7 +81,7 @@ export function SiteFooter() {
                                     href={`${contactLink}`}
                                     target="_blank"
                                     className="
-                                        mt-auto text-md font-semibold text-center
+                                        mt-auto text-xs md:text-lg font-semibold text-center
                                         rounded-md px-4 py-2
                                         border border-white/10 
                                         bg-[#11990A] shadow-md
@@ -95,7 +94,7 @@ export function SiteFooter() {
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center justify-center gap-6 h-full md:items-end">
+                <div className="flex flex-col sm:flex-row lg:flex-col items-center justify-center gap-6 h-full md:items-end">
                     <div className="w-64 shrink-0 sm:w-100">
                         <Image
                             src="/logos/bricsed-white-full-footer.png"
@@ -107,9 +106,9 @@ export function SiteFooter() {
                     </div>
 
                     {/* Media Social */}
-                    <div className="flex flex-col shrink-0 items-center justify-end gap-3">
+                    <div className="flex flex-col shrink-0 items-center justify-end gap-4 md:gap-3">
                         {socials.map(({ media, name, icon, mediaLink }) => (
-                            <div key={media} className="flex gap-4 items-center justify-end w-full">
+                            <div key={media} className="flex flex-row-reverse md:flex-row gap-4 items-center justify-end w-full">
                                 <p>{name}</p>
                                 <a
                                     href={mediaLink}

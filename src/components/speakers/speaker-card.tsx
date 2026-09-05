@@ -33,12 +33,12 @@ export function SpeakerCard({
             </div>
 
             {/* Content */}
-            <div className={`relative w-full bg-[#F6F6F6] border border-[#969696] mx-1.5 ${ status === `confirmed` ? `mb-1.5` : `mb-auto`} mb-1.5 mt-auto py-3 px-4 rounded-2xl flex flex-col gap-2 justify-center items-center shadow-2xl`}>
-                <h3 className="font-primary text-2xl font-bold leading-none tracking-wide text-[#021431] text-center">
+            <div className={`relative w-full h-[28%] bg-[#F6F6F6] border border-[#969696] mx-1.5 ${ status === `confirmed` ? `mb-1.5` : `mb-auto`} mt-auto py-2 px-4 rounded-2xl flex flex-col gap-2 justify-center items-center shadow-2xl`}>
+                <h3 className="font-primary text-xl sm:text-2xl font-bold leading-none tracking-wide text-[#021431] text-center">
                     {name}
                 </h3>
 
-                <p className="text-[14px] font-semibold leading-none text-[#969696] text-center">
+                <p className="text-[12px] lg:text-[14px] font-semibold leading-none text-[#969696] text-center">
                     {title}
                 </p>
             </div>
