@@ -2,7 +2,9 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import { Instrument_Sans } from "next/font/google"
 
+import { AosProvider } from "@/components/providers/aos-provider"
 import "./globals.css"
+
 
 const coolvetica = localFont({
     src: "./fonts/coolvetica.ttf",
@@ -33,6 +35,7 @@ export default function RootLayout({
         <body
             className={`${coolvetica.variable} ${instrumentSans.variable}`}
         >
+        <AosProvider />
         {children}
         </body>
         </html>

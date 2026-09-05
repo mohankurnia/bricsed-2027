@@ -101,7 +101,7 @@ export function RegistrationSection() {
             className="bg-[#f6f6f6] py-10"
         >
             <div className="mx-auto container px-3 md:px-10 lg:px-20">
-                <h2 className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue leading-normal">
+                <h2 data-aos="fade-up" className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue leading-normal">
                     Registration
                 </h2>
                 <div className="mt-5 md:mt-10">
@@ -109,6 +109,7 @@ export function RegistrationSection() {
                         className="grid gap-2 rounded-xl bg-[#001431] p-2 sm:grid-cols-2" // change to 3 for active tabs
                         role="tablist"
                         aria-label="Registration pricing"
+                        data-aos="zoom-in" 
                     >
                         {pricingTabs.map((tab, index) => (
                             <button
@@ -135,6 +136,7 @@ export function RegistrationSection() {
                         role="tabpanel"
                         id={`pricing-panel-${activeTab}`}
                         aria-labelledby={`pricing-tab-${activeTab}`}
+                        data-aos="fade-up"
                     >
                         <PricingGroup {...pricingTabs[activeTab]} />
                     </div>

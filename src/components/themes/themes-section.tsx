@@ -36,18 +36,18 @@ export function ThemesSection() {
                 className="mx-4 md:mx-5 relative overflow-hidden bg-[#f6f6f6] py-10 text-white scroll-mt-10"
             >
                 <div className="mx-auto container px-0 sm:px-10 md:px-20">
-                    <h2 className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue">
+                    <h2 data-aos="fade-up" className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue">
                         Themes
                     </h2>
 
                     <div className="mt-5 lg:mt-10">
-                        <h3 className="text-xl sm:text-3xl lg:text-5xl font-bold text-center">
+                        <h3 data-aos="fade-up" className="text-xl sm:text-3xl lg:text-5xl font-bold text-center">
                             <span className="text-[#0aa31a]">International Conference</span>
                             {" "}
                             <span className="text-gradient-blue">Main Themes</span>
                         </h3>
 
-                        <div className="mt-6 grid gap-5 lg:grid-cols-3">
+                        <div data-aos="zoom-in" className="mt-6 grid gap-5 lg:grid-cols-3">
                             {mainThemes.map((theme) => (
                                 <ThemeCard
                                     key={theme.id}
@@ -62,13 +62,13 @@ export function ThemesSection() {
 
                     {/* SUB THEMES */}
                     <div className="mt-10">
-                        <h3 className="font-primary text-xl sm:text-2xl lg:text-4xl text-center">
+                        <h3 data-aos="fade-up" className="font-primary text-xl sm:text-2xl lg:text-4xl text-center">
                             <span className="text-[#11990A]">International Conference</span>
                             {" "}
                             <span className="text-gradient-blue">Sub Themes</span>
                         </h3>
 
-                        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                        <div data-aos="zoom-in" className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                             {subThemes.map((theme) => (
                                 <SubThemeCard
                                     key={theme.id}
@@ -83,13 +83,13 @@ export function ThemesSection() {
 
                     {/* PAPER THEMES */}
                     <div className="mt-10">
-                        <h3 className="font-primary text-xl sm:text-3xl lg:text-5xl text-center">
+                        <h3 data-aos="fade-up" className="font-primary text-xl sm:text-3xl lg:text-5xl text-center">
                             <span className="text-[#11990A]">International Paper</span>
                             {" "}
                             <span className="text-gradient-blue">Student Competition Themes</span>
                         </h3>
 
-                        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                        <div data-aos="zoom-in" className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                             {paperThemes.map((theme) => (
                                 <SubThemeCard
                                     key={theme.id}

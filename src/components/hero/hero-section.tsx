@@ -39,17 +39,17 @@ export function HeroSection() {
                 />
 
                 <div className="relative mx-auto flex flex-col px-4 lg:px-0 items-center mt-25 md:mt-35 mb-10 gap-5 md:gap-7 text-center">
-                    <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 items-center rounded-full border px-5 py-2.5 text-xs shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs sm:text-sm md:px-8 md:text-[16px]">
+                    <div data-aos="fade-up" className="flex flex-col sm:flex-row gap-1 sm:gap-2 items-center rounded-full border px-5 py-2.5 text-xs shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs sm:text-sm md:px-8 md:text-[16px]">
                         <p>{conference.date}</p>
                         <div className="size-1.5 shrink-0 rounded-full bg-[#F6F6F6] hidden sm:block"></div>
                         <p>{conference.venue}</p>
                     </div>
 
-                    <p className="text-center text-[12px] md:text-[16px] text-white">
+                    <p data-aos="fade-up" data-aos-delay="100" className="text-center text-[12px] md:text-[16px] text-white">
                         Organized by International Relations Department, Faculty of Social and Political Sciences, Universitas Brawijaya
                     </p>
 
-                    <div className="flex flex-col gap-4 items-center">    
+                    <div data-aos="fade-up" data-aos-delay="200" className="flex flex-col gap-4 items-center">    
                         <h1 className="font-primary text-[clamp(4rem,10vw,8.3rem)] tracking-[0.05em] font-black italic leading-[0.82] ">
                             BRICSED 2027
                         </h1>
@@ -66,6 +66,7 @@ export function HeroSection() {
                         <Link
                             href={internationalConference.registration_link}
                             target="_blank"
+                            data-aos="zoom-in" data-aos-delay="300"
                             className="rounded-full border border-white bg-[#001431] px-4 sm:px-8 py-3 text-[12px] sm:text-[14px] md:text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] transition hover:-translate-y-0.5 hover:bg-[#05245b]"
                         >
                             International Conference
@@ -73,6 +74,8 @@ export function HeroSection() {
 
                         <Link
                             href="#programs"
+                            target="_blank"
+                            data-aos="zoom-in" data-aos-delay="400"
                             className="rounded-full border bg-[rgba(0,0,0,0.1)] px-4 sm:px-8 py-3 text-[12px] sm:text-[14px] md:text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs transition hover:-translate-y-0.5 hover:bg-white/10"
                         >
                             International Student Paper Competition
@@ -83,6 +86,7 @@ export function HeroSection() {
                     <Link
                         href="#about"
                         aria-label="Scroll to about section"
+                        data-aos="zoom-in-down" data-aos-delay="200"
                         className="transition hover:translate-y-1"
                     >
                         <div className="flex flex-col items-center">

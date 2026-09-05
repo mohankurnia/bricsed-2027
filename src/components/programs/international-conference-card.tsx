@@ -5,7 +5,7 @@ import { internationalConference } from "@/data/programs"
 
 export function InternationalConferenceCard() {
     return (
-        <article className="flex max-w-127.75 w-full flex-col overflow-hidden rounded-[20px] border border-white bg-white shadow-[0_20px_40px_rgba(0,20,60,0.16)]">
+        <article data-aos="zoom-in" data-aos-delay="100" className="flex max-w-127.75 w-full flex-col overflow-hidden rounded-[20px] border border-white bg-white shadow-[0_20px_40px_rgba(0,20,60,0.16)]">
             <div className="flex min-h-20 sm:min-h-24 items-center justify-center md:justify-normal gap-2 md:gap-5 bricsed-gradient px-2 md:px-7 text-white shadow-[inset_0px_8px_60px_rgba(0,0,0,.3)]">
                 <Globe2
                     className="size-10 sm:size-12 shrink-0 hidden sm:block"

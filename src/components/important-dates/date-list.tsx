@@ -12,7 +12,7 @@ export function DateList({
                             items,
                         }: DateListProps) {
     return (
-        <div>
+        <div data-aos="zoom-in" data-aos-delay="200">
             {items.map((item, index) => (
                 <div
                     key={`${item.date}-${item.title}`}

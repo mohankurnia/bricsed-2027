@@ -54,7 +54,7 @@ export function SiteFooter() {
         >
             <div className="mx-auto container px-3 md:px-10 lg:px-20 grid gap-6 md:gap-12 py-16 lg:grid-cols-2 lg:items-center">
                 <div>
-                    <h2 className="text-center lg:text-left text-5xl lg:text-6xl font-black text-shadow-lg">
+                    <h2 data-aos="fade-up" className="text-center lg:text-left text-5xl lg:text-6xl font-black text-shadow-lg">
                         Contact Us
                     </h2>
 
@@ -66,6 +66,7 @@ export function SiteFooter() {
                                     flex flex-col gap-3
                                     max-w-60 w-full h-55 p-4
                                     rounded-md"
+                                    data-aos="fade-right"
                             >
                                 <div className="bg-[#01112B] w-fit p-3 rounded-full">    
                                     <Icon className="
@@ -95,7 +96,7 @@ export function SiteFooter() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row lg:flex-col items-center justify-center gap-6 h-full md:items-end">
-                    <div className="w-64 shrink-0 sm:w-100">
+                    <div data-aos="fade-up" className="w-64 shrink-0 sm:w-100">
                         <Image
                             src="/logos/bricsed-white-full-footer.png"
                             alt="BRICSED 2027"
@@ -108,7 +109,7 @@ export function SiteFooter() {
                     {/* Media Social */}
                     <div className="flex flex-col shrink-0 items-center justify-end gap-4 md:gap-3">
                         {socials.map(({ media, name, icon, mediaLink }) => (
-                            <div key={media} className="flex flex-row-reverse md:flex-row gap-4 items-center justify-end w-full">
+                            <div data-aos="zoom-in" key={media} className="flex flex-row-reverse md:flex-row gap-4 items-center justify-end w-full">
                                 <p>{name}</p>
                                 <a
                                     href={mediaLink}

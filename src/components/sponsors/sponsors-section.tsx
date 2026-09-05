@@ -6,7 +6,7 @@ export function SponsorsSection() {
     return (
         <section className="bg-[#f6f6f6] pt-10 pb-20">
             <div className="mx-auto container px-3">
-                <h2 className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue leading-none">
+                <h2 data-aos="fade-up" className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue leading-none">
                     Sponsors & Partners
                 </h2>
                 <div className="mx-auto mt-6 lg:mt-12 grid max-w-3xl grid-cols-4 gap-2 sm:gap-6">
@@ -14,6 +14,7 @@ export function SponsorsSection() {
                         <div
                             key={sponsor.id}
                             className="flex items-center justify-center px-2 md:px-6 py-2 md:py-5 sm:h-36"
+                            data-aos="zoom-in"
                         >
                             <Image
                                 src={sponsor.logo}

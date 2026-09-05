@@ -68,7 +68,7 @@ export function Countdown() {
     ]
 
     return (
-        <div className="rounded-2xl bg-linear-to-b from-[#0ab314] to-[#06780d] px-4 md:px-16 py-5 shadow-xl">
+        <div data-aos="zoom-in" data-aos-delay="200" className="rounded-2xl bg-linear-to-b from-[#0ab314] to-[#06780d] px-4 md:px-16 py-5 shadow-xl">
             <h3 className="text-center text-[18px] md:text-2xl font-bold leading-none text-white">
                 Countdown to Conference
             </h3>
