@@ -107,9 +107,9 @@ export function SiteFooter() {
                     </div>
 
                     {/* Media Social */}
-                    <div className="flex flex-col shrink-0 items-center justify-end gap-4 md:gap-3">
+                    <div data-aos="zoom-in" className="flex flex-col shrink-0 items-center justify-end gap-4 md:gap-3">
                         {socials.map(({ media, name, icon, mediaLink }) => (
-                            <div data-aos="zoom-in" key={media} className="flex flex-row-reverse md:flex-row gap-4 items-center justify-end w-full">
+                            <div key={media} className="flex flex-row-reverse md:flex-row gap-4 items-center justify-end w-full">
                                 <p>{name}</p>
                                 <a
                                     href={mediaLink}
