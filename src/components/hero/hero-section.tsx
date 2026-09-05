@@ -62,11 +62,10 @@ export function HeroSection() {
                     <Countdown />
 
 
-                    <div className="flex flex-col gap-4 sm:flex-row">
+                    <div className="flex flex-col gap-4 sm:flex-row" data-aos="zoom-in" data-aos-delay="300">
                         <Link
                             href={internationalConference.registration_link}
                             target="_blank"
-                            data-aos="zoom-in" data-aos-delay="300"
                             className="rounded-full border border-white bg-[#001431] px-4 sm:px-8 py-3 text-[12px] sm:text-[14px] md:text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] transition hover:-translate-y-0.5 hover:bg-[#05245b]"
                         >
                             International Conference
@@ -75,7 +74,6 @@ export function HeroSection() {
                         <Link
                             href="#programs"
                             target="_blank"
-                            data-aos="zoom-in" data-aos-delay="400"
                             className="rounded-full border bg-[rgba(0,0,0,0.1)] px-4 sm:px-8 py-3 text-[12px] sm:text-[14px] md:text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs transition hover:-translate-y-0.5 hover:bg-white/10"
                         >
                             International Student Paper Competition
@@ -86,10 +84,9 @@ export function HeroSection() {
                     <Link
                         href="#about"
                         aria-label="Scroll to about section"
-                        data-aos="zoom-in-down" data-aos-delay="200"
                         className="transition hover:translate-y-1"
                     >
-                        <div className="flex flex-col items-center">
+                        <div data-aos="zoom-in-down" data-aos-delay="200" className="flex flex-col items-center">
                             <img src="/logos/hero_scroll.svg" alt="Scroll down" />
                         </div>
                     </Link>
