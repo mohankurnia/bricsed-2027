@@ -20,7 +20,7 @@ export const internationalConference = {
 
     registration_link: "https://s.ub.ac.id/abstractbricsed",
 
-    guidelines: "#"
+    guidelines: "https://drive.google.com/file/d/1sDI0SFKlLGVRxcmgrM14_YAD-yAuiyh0/view?usp=drive_link"
 }
 
 export const callForPapers = {
