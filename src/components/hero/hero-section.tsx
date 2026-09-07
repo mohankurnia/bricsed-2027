@@ -59,6 +59,10 @@ export function HeroSection() {
                         </p>
                     </div>
 
+                    <p data-aos="fade-up" data-aos-delay="100" className="text-center text-[12px] md:text-[16px] text-white">
+                        Relevant Fields of Study: <b>International Relations, Politics, Economics, Business, and other Social Sciences and Humanities fields.</b>
+                    </p>
+
                     <Countdown />
 
 

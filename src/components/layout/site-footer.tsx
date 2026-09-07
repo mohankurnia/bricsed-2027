@@ -95,7 +95,7 @@ export function SiteFooter() {
                     </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row lg:flex-col items-center justify-center gap-6 h-full md:items-end">
+                <div className="flex flex-col sm:flex-row lg:flex-col justify-center gap-6 h-full items-end">
                     <div data-aos="fade-up" className="w-64 shrink-0 sm:w-100">
                         <Image
                             src="/logos/bricsed-white-full-footer.png"
@@ -109,7 +109,7 @@ export function SiteFooter() {
                     {/* Media Social */}
                     <div data-aos="zoom-in" className="flex flex-col shrink-0 items-center justify-end gap-4 md:gap-3">
                         {socials.map(({ media, name, icon, mediaLink }) => (
-                            <div key={media} className="flex flex-row-reverse md:flex-row gap-4 items-center justify-end w-full">
+                            <div key={media} className="flex flex-row-reverse gap-4 items-center justify-end w-full">
                                 <p>{name}</p>
                                 <a
                                     href={mediaLink}

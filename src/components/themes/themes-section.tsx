@@ -84,9 +84,9 @@ export function ThemesSection() {
                     {/* PAPER THEMES */}
                     <div className="mt-10">
                         <h3 data-aos="fade-up" className="font-primary text-xl sm:text-3xl lg:text-5xl text-center">
-                            <span className="text-[#11990A]">International Paper</span>
+                            <span className="text-[#11990A]">International Student</span>
                             {" "}
-                            <span className="text-gradient-blue">Student Competition Themes</span>
+                            <span className="text-gradient-blue">Paper Competition Themes</span>
                         </h3>
 
                         <div data-aos="zoom-in" className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">

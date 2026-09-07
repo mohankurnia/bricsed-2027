@@ -24,6 +24,7 @@ export const conferenceRegistrationRegularWave = [
     {
         title: "Presenter",
         prices: [
+            ["Onsite Domestic (Student)", "Rp600.000"],
             ["Onsite Domestic", "Rp800.000"],
             ["Onsite International", "USD 50"],
             ["Online Domestic", "Rp350.000"],
@@ -45,6 +46,6 @@ export const paperSubmission = {
     title: "Fee",
     prices: [
         ["Online Domestic", "Rp50.000"],
-        ["Online International", "USD 4"],
+        ["Online International", "USD 5"],
     ],
 }

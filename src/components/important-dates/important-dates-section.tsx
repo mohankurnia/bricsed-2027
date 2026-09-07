@@ -34,10 +34,10 @@ export function ImportantDatesSection() {
                 <div className="flex flex-col gap-4 mt-10 px-0 md:px-10 lg:px-20">
                     <h3 data-aos="fade-right" className="text-center md:text-left text-3xl font-bold md:text-4xl lg:text-5xl">
                         <span className="text-gradient-blue">
-                            International Paper
+                            International Student
                         </span>{" "}
                                     <span className="text-[#0aa31a]">
-                            Student Competition
+                            Paper Competition
                         </span>
                     </h3>
 

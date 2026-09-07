@@ -70,22 +70,22 @@ function PricingGroup({
 
 const pricingTabs = [
     {
-        label: "Early Bird",
-        title: "Early Bird",
-        date: "10 - 26 November 2026",
+        label: "Early Bird Conference",
+        title: "Early Bird Conference",
+        date: "5 - 26 November 2026",
         program: "International Conference",
         items: conferenceRegistrationEarlyBird,
     },
     {
-        label: "Regular Wave",
-        title: "Regular Wave",
+        label: "Regular Wave Conference",
+        title: "Regular Wave Conference",
         date: "27 November - 26 December 2026",
         program: "International Conference",
         items: conferenceRegistrationRegularWave,
     },
     // {
-    //     label: "Paper Submission",
-    //     title: "Paper Submission",
+    //     label: "International Paper Student Competition Payment",
+    //     title: "International Paper Student Competition Payment",
     //     date: "10 November 2026",
     //     program: "International Paper Student Competition",
     //     items: [paperSubmission],

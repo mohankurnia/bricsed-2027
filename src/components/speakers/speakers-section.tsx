@@ -28,7 +28,7 @@ export function SpeakersSection() {
 
                 {/* Panelist */}
                 <p data-aos="fade-up" className="text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
-                    Panelist
+                    Speakers
                 </p>
                 <div data-aos="zoom-in" className="mt-5 px-0 sm:px-8 md:px-10 lg:px-15 grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-items-center">
                     {panelists.map((panelist, index) => (

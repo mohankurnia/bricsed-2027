@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { sponsors } from "@/data/sponsors"
+import { organizers, supports, medias } from "@/data/sponsors"
 
 export function SponsorsSection() {
     return (
@@ -9,16 +9,22 @@ export function SponsorsSection() {
                 <h2 data-aos="fade-up" className="font-primary text-center font-normal text-5xl md:text-6xl lg:text-7xl xl:text-8xl italic text-gradient-blue leading-none">
                     Sponsors & Partners
                 </h2>
-                <div className="mx-auto mt-6 lg:mt-12 grid max-w-3xl grid-cols-4 gap-2 sm:gap-6">
-                    {sponsors.map((sponsor) => (
+
+                {/* Organized by */}
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                    Organized by
+                </p>
+
+                <div className="mx-auto mt-2 grid max-w-5xl grid-cols-4 gap-2 sm:gap-6">
+                    {organizers.map((organizer) => (
                         <div
-                            key={sponsor.id}
-                            className="flex items-center justify-center px-2 md:px-6 py-2 md:py-5 sm:h-36"
+                            key={organizer.id}
+                            className="flex items-center justify-center px-1 md:px-4 py-1 md:py-4 sm:h-36"
                             data-aos="zoom-in"
                         >
                             <Image
-                                src={sponsor.logo}
-                                alt={sponsor.label}
+                                src={organizer.logo}
+                                alt={organizer.label}
                                 width={240}
                                 height={120}
                                 className="h-full w-full object-contain"
@@ -26,6 +32,52 @@ export function SponsorsSection() {
                         </div>
                     ))}
                 </div>
+
+                {/* Support by */}
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                    Supported by
+                </p>
+
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-1 gap-2 sm:gap-6">
+                    {supports.map((support) => (
+                        <div
+                            key={support.id}
+                            className="flex items-center justify-center px-1 md:px-4 py-1 md:py-4 sm:h-36"
+                            data-aos="zoom-in"
+                        >
+                            <Image
+                                src={support.logo}
+                                alt={support.label}
+                                width={240}
+                                height={120}
+                                className="h-full w-full object-contain"
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Media Partner */}
+                {/* <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                    Media Partner
+                </p> */}
+
+                {/* <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-1 gap-2 sm:gap-6">
+                    {medias.map((media) => (
+                        <div
+                            key={media.id}
+                            className="flex items-center justify-center px-1 md:px-4 py-1 md:py-4 sm:h-36"
+                            data-aos="zoom-in"
+                        >
+                            <Image
+                                src={media.logo}
+                                alt={media.label}
+                                width={240}
+                                height={120}
+                                className="h-full w-full object-contain"
+                            />
+                        </div>
+                    ))}
+                </div> */}
             </div>
         </section>
     )

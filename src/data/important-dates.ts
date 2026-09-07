@@ -1,32 +1,32 @@
 export const conferenceDates = [
     {
-        date: "7 September 2026",
-        title: "Call for Abstracts Opens",
+        date: "7 September - 31 October 2026",
+        title: "Call for Papers",
         status: "now"
     },
-    {
-        date: "31 October 2026",
-        title: "Call for Abstracts Closes",
-        status: "not yet"
-    },
+    // {
+    //     date: "31 October 2026",
+    //     title: "Call for Abstracts Closes",
+    //     status: "not yet"
+    // },
     {
         date: "5 November 2026",
         title: "Abstracts Acceptance Notification",
         status: "not yet"
     },
     {
-        date: "10 - 26 November 2026",
+        date: "5 - 26 November 2026",
         title: "Early Bird Payment Registration",
         status: "not yet"
     },
-    // {
-    //     date: "27 November - 26 December 2026",
-    //     title: "Regular Registration",
-    //     status: "not yet"
-    // },
+    {
+        date: "27 November - 26 December 2026",
+        title: "Regular Wave Payment Registration",
+        status: "not yet"
+    },
     {
         date: "16 January 2027",
-        title: "Deadline Submission for PPT (Mandatory) & Full Paper (Optional)",
+        title: "Submission Deadline for PPT (Mandatory) & Full Paper (Optional)",
         status: "not yet"
     },
     {
@@ -43,15 +43,15 @@ export const conferenceDates = [
 
 export const competitionDates = [
     {
-        date: "10 September 2026",
-        title: "Call for Papers Opens",
+        date: "10 September - 10 November 2026",
+        title: "Call for Papers",
         status: "not yet"
     },
-    {
-        date: "10 November 2026",
-        title: "Call for Papers Closes",
-        status: "not yet"
-    },
+    // {
+    //     date: "10 November 2026",
+    //     title: "Call for Papers Closes",
+    //     status: "not yet"
+    // },
     {
         date: "23 Desember 2026",
         title: "Finalist Announcement",
