@@ -8,7 +8,7 @@ export const panelists = [
     },
     {
         id: "speaker-2",
-        name: "Dr. Anggun Trisnanto Hari Susilo, S.IP., M.IDEA., Ph.D.",
+        name: "Dr. Anggun Trisnanto Hari Susilo, S.IP., M.IDEA.",
         image: "/images/speakers/anggun-trisnanto.png",
         title: "Faculty of Social and Political Sciences, Universitas Brawijaya",
         status: "confirmed"
