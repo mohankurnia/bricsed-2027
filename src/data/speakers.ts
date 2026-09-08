@@ -15,16 +15,16 @@ export const panelists = [
     },
     {
         id: "speaker-3",
-        name: "To be Announced",
-        image: "/tba-speaker.png",
-        title: "Researcher from an Acclaimed Japanese Institution",
-        status: "unconfirmed"
+        name: "Yogi Setya Permana, Ph.D",
+        image: "/images/speakers/yogi-setya-permana.png",
+        title: "Researcher at The National Research and Innovation Agency (BRIN)",
+        status: "confirmed"
     },
     {
         id: "speaker-4",
         name: "To be Announced",
         image: "/tba-speaker.png",
-        title: "Researcher from the National Research and Innovation Agency of Indonesia",
+        title: "Researcher from an Acclaimed Japanese Institution",
         status: "unconfirmed"
     },
 ]
