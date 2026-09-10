@@ -45,7 +45,7 @@ export const competitionDates = [
     {
         date: "10 September - 10 November 2026",
         title: "Call for Papers",
-        status: "not yet"
+        status: "now"
     },
     // {
     //     date: "10 November 2026",

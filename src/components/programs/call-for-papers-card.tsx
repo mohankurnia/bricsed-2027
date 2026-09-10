@@ -69,9 +69,9 @@ export function CallForPapersCard() {
                         </h4>
 
                         <a 
-                            // href={`${callForPapers.guidelines}`} 
+                            href={`${callForPapers.guidelines}`} 
                             target='_blank'
-                            className="flex items-center mt-2 ml-5 w-fit gap-2 border border-[#e2e2e2] py-3 px-3 rounded-md transition hover:bg-[#f5f5f5] cursor-pointer button-disabled">
+                            className="flex items-center mt-2 ml-5 w-fit gap-2 border border-[#e2e2e2] py-3 px-3 rounded-md transition hover:bg-[#f5f5f5] cursor-pointer">
                             <img 
                                 src="/guideline.png" 
                                 alt="Guideline"
@@ -86,11 +86,11 @@ export function CallForPapersCard() {
 
                 {/* CTA */}
                 <a
-                    // href={callForPapers.registration_link}
+                    href={callForPapers.registration_link}
                     target="_blank"
-                    className="mt-auto flex content-end min-h-14.5 items-center justify-center rounded-full text-xl font-bold bricsed-gradient px-7 text-white shadow-[inset_0px_8px_60px_rgba(0,0,0,.3)] transition-transform hover:scale-[1.01] button-disabled"
+                    className="mt-auto flex content-end min-h-14.5 items-center justify-center rounded-full text-xl font-bold bricsed-gradient px-7 text-white shadow-[inset_0px_8px_60px_rgba(0,0,0,.3)] transition-transform hover:scale-[1.01]"
                 >
-                    To be Announced
+                    Register Now
                 </a>
             </div>
         </article>

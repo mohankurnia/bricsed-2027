@@ -76,7 +76,7 @@ export function HeroSection() {
                         </Link>
 
                         <Link
-                            href="#programs"
+                            href="https://s.ub.ac.id/studentpaper"
                             target="_blank"
                             className="rounded-full border bg-[rgba(0,0,0,0.1)] px-4 sm:px-8 py-3 text-[12px] sm:text-[14px] md:text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] backdrop-blur-xs transition hover:-translate-y-0.5 hover:bg-white/10"
                         >

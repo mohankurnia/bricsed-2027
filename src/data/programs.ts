@@ -38,7 +38,7 @@ export const callForPapers = {
     date: 
         "31 January 2027",
 
-    registration_link: "",
+    registration_link: "https://s.ub.ac.id/studentpaper",
 
-    guidelines: "#"
+    guidelines: "https://drive.google.com/file/d/1kvhhmaIRDm7JIYIS3vZJ6oBiIqKtBrGN/view?usp=drivesdk"
 }

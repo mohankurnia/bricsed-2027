@@ -17,7 +17,7 @@ export const conferenceRegistrationEarlyBird = [
             ["Online Domestic", "Rp80.000"],
             ["Online International", "USD 5"],
         ],
-    },
+    }
 ]
 
 export const conferenceRegistrationRegularWave = [
@@ -39,7 +39,7 @@ export const conferenceRegistrationRegularWave = [
             ["Online Domestic", "Rp100.000"],
             ["Online International", "USD 7"],
         ],
-    },
+    }
 ]
 
 export const paperSubmission = {

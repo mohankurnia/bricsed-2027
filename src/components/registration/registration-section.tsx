@@ -6,10 +6,11 @@ import { useState } from "react"
 import { PricingCard } from "@/components/registration/pricing-card"
 
 import { internationalConference } from "@/data/programs"
+import { callForPapers } from "@/data/programs"
 import {
     conferenceRegistrationEarlyBird,
     conferenceRegistrationRegularWave,
-    // paperSubmission,
+    paperSubmission,
 } from "@/data/registration"
 
 function PricingGroup({
@@ -57,7 +58,11 @@ function PricingGroup({
 
             <div className="mt-5 md:mt-10 mx-auto flex justify-center">
                 <Link
-                    href={internationalConference.registration_link}
+                    href={
+                        program === "International Conference"
+                            ? internationalConference.registration_link
+                            : callForPapers.registration_link
+                    }
                     target="_blank"
                     className="rounded-full border text-white border-white bg-[#001431] px-8 py-3 text-lg font-bold shadow-[0_4px_20px_rgba(0,0,0,.35)] transition hover:-translate-y-0.5 hover:bg-[#05245b]"
                 >
@@ -83,13 +88,13 @@ const pricingTabs = [
         program: "International Conference",
         items: conferenceRegistrationRegularWave,
     },
-    // {
-    //     label: "International Paper Student Competition Payment",
-    //     title: "International Paper Student Competition Payment",
-    //     date: "10 November 2026",
-    //     program: "International Paper Student Competition",
-    //     items: [paperSubmission],
-    // },
+    {
+        label: "International Paper Student Competition Payment",
+        title: "International Paper Student Competition Payment",
+        date: "10 November 2026",
+        program: "International Paper Student Competition",
+        items: [paperSubmission],
+    },
 ]
 
 export function RegistrationSection() {
@@ -106,7 +111,7 @@ export function RegistrationSection() {
                 </h2>
                 <div className="mt-5 md:mt-10">
                     <div
-                        className="grid gap-2 rounded-xl bg-[#001431] p-2 sm:grid-cols-2" // change to 3 for active tabs
+                        className="grid gap-2 rounded-xl bg-[#001431] p-2 sm:grid-cols-3" // change to 3 for active tabs
                         role="tablist"
                         aria-label="Registration pricing"
                         data-aos="zoom-in" 
