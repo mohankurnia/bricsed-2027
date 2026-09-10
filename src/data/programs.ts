@@ -40,5 +40,5 @@ export const callForPapers = {
 
     registration_link: "https://s.ub.ac.id/studentpaper",
 
-    guidelines: "https://drive.google.com/file/d/1kvhhmaIRDm7JIYIS3vZJ6oBiIqKtBrGN/view?usp=drivesdk"
+    guidelines: "https://s.ub.ac.id/guidebookpaper"
 }
