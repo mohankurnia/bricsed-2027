@@ -40,5 +40,5 @@ export const callForPapers = {
 
     registration_link: "https://s.ub.ac.id/studentpaper",
 
-    guidelines: "https://s.ub.ac.id/guidebookpaper"
+    guidelines: "https://s.ub.ac.id/guidebookpaperbricsed"
 }
