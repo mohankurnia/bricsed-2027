@@ -53,7 +53,7 @@ export const competitionDates = [
     //     status: "not yet"
     // },
     {
-        date: "23 Desember 2026",
+        date: "23 December 2026",
         title: "Finalist Announcement",
         status: "not yet"
     },
@@ -67,11 +67,11 @@ export const competitionDates = [
         title: "Final Presentation",
         status: "not yet"
     },
-    {
-        date: "1 February 2027",
-        title: "Participation Certification & Awardee Certification",
-        status: "not yet"
-    },
+    // {
+    //     date: "1 February 2027",
+    //     title: "Participation Certification & Awardee Certification",
+    //     status: "not yet"
+    // },
     {
         date: "TBA",
         title: "Book Chapter Publication (Top 10 Finalist)",
