@@ -9,7 +9,7 @@ export function AosProvider() {
             duration: 700,
             easing: "ease-out-cubic",
             once: false,
-            offset: 80,
+            offset: 40,
         })
 
         return () => AOS.refresh()

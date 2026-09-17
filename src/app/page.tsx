@@ -1,5 +1,4 @@
 import { SiteFooter } from "@/components/layout/site-footer"
-
 import { AboutSection } from "@/components/about/about-section"
 import { HeroSection } from "@/components/hero/hero-section"
 import { ImportantDatesSection } from "@/components/important-dates/important-dates-section"
@@ -8,7 +7,8 @@ import { RegistrationSection } from "@/components/registration/registration-sect
 import { SpeakersSection } from "@/components/speakers/speakers-section"
 import { SponsorsSection } from "@/components/sponsors/sponsors-section"
 import { ThemesSection } from "@/components/themes/themes-section"
-import {SiteHeader} from "@/components/layout/site-header";
+import { SiteHeader } from "@/components/layout/site-header"
+import {CommitteeSection } from "@/components/committee/committee-section"
 
 export default function HomePage() {
     return (
@@ -22,6 +22,7 @@ export default function HomePage() {
             <ThemesSection />
             <ImportantDatesSection />
             <RegistrationSection />
+            <CommitteeSection />
             <SponsorsSection />
         </main>
             <SiteFooter />

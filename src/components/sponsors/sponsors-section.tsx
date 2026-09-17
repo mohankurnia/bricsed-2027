@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { organizers, supports, medias } from "@/data/sponsors"
+import { organizers, supports, journals, medias } from "@/data/sponsors"
 
 export function SponsorsSection() {
     return (
@@ -15,11 +15,11 @@ export function SponsorsSection() {
                     Organized by
                 </p>
 
-                <div className="mx-auto mt-2 grid max-w-5xl grid-cols-4 gap-2 sm:gap-6">
+                <div className="mx-auto mt-2 grid max-w-5xl grid-cols-3 gap-2 sm:gap-6"> {/* change grid here */}
                     {organizers.map((organizer) => (
                         <div
                             key={organizer.id}
-                            className="flex items-center justify-center px-1 md:px-4 py-1 md:py-4 sm:h-36"
+                            className="flex items-center justify-center px-1 md:px-4 py-1 md:py-4 h-26 sm:h-36"
                             data-aos="zoom-in"
                         >
                             <Image
@@ -48,6 +48,29 @@ export function SponsorsSection() {
                             <Image
                                 src={support.logo}
                                 alt={support.label}
+                                width={240}
+                                height={120}
+                                className="h-full w-full object-contain"
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Journal Partners */}
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                    Journal Partners
+                </p>
+
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-2 gap-2 sm:gap-6">
+                    {journals.map((journal) => (
+                        <div
+                            key={journal.id}
+                            className="flex items-center justify-center px-1 md:px-4 py-1 md:py-4 sm:h-36"
+                            data-aos="zoom-in"
+                        >
+                            <Image
+                                src={journal.logo}
+                                alt={journal.label}
                                 width={240}
                                 height={120}
                                 className="h-full w-full object-contain"
