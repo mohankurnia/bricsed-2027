@@ -67,6 +67,6 @@ export const strategicPartners = [
     {
         id: "strategic-partner-1",
         label: "KRKP",
-        logo: "/sponsors/krkp.png"
+        logo: "/sponsors/krkp.PNG"
     },
 ]
