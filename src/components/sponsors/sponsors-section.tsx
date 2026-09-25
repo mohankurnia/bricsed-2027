@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { organizers, supports, journals, medias } from "@/data/sponsors"
+import { organizers, coOrganizers, supports, journals, medias, strategicPartners } from "@/data/sponsors"
 
 export function SponsorsSection() {
     return (
@@ -15,7 +15,7 @@ export function SponsorsSection() {
                     Organized by
                 </p>
 
-                <div className="mx-auto mt-2 grid max-w-5xl grid-cols-3 gap-2 sm:gap-6"> {/* change grid here */}
+                <div className="mx-auto mt-2 grid max-w-5xl grid-cols-4 gap-2 sm:gap-6"> {/* change grid here */}
                     {organizers.map((organizer) => (
                         <div
                             key={organizer.id}
@@ -25,6 +25,29 @@ export function SponsorsSection() {
                             <Image
                                 src={organizer.logo}
                                 alt={organizer.label}
+                                width={240}
+                                height={120}
+                                className="h-full w-full object-contain"
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Co-Organized by */}
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                    Co-Organized by
+                </p>
+
+                <div className="mx-auto mt-2 grid max-w-5xl grid-cols-2 gap-2 sm:gap-6"> {/* change grid here */}
+                    {coOrganizers.map((coOrganizer) => (
+                        <div
+                            key={coOrganizer.id}
+                            className="flex items-center justify-center px-1 md:px-4 py-1 md:py-4 h-26 sm:h-36"
+                            data-aos="zoom-in"
+                        >
+                            <Image
+                                src={coOrganizer.logo}
+                                alt={coOrganizer.label}
                                 width={240}
                                 height={120}
                                 className="h-full w-full object-contain"
@@ -57,7 +80,7 @@ export function SponsorsSection() {
                 </div>
 
                 {/* Journal Partners */}
-                <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                {/* <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
                     Journal Partners
                 </p>
 
@@ -77,14 +100,37 @@ export function SponsorsSection() {
                             />
                         </div>
                     ))}
+                </div> */}
+
+                {/* Strategic Partners */}
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                    Strategic Partners
+                </p>
+
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-1 gap-2 sm:gap-6">
+                    {strategicPartners.map((strategicPartner) => (
+                        <div
+                            key={strategicPartner.id}
+                            className="flex items-center justify-center px-1 md:px-4 py-1 md:py-4 sm:h-36"
+                            data-aos="zoom-in"
+                        >
+                            <Image
+                                src={strategicPartner.logo}
+                                alt={strategicPartner.label}
+                                width={240}
+                                height={120}
+                                className="h-full w-full object-contain"
+                            />
+                        </div>
+                    ))}
                 </div>
 
-                {/* Media Partner */}
-                {/* <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
-                    Media Partner
-                </p> */}
+                {/* Media Partners */}
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                    Media Partners
+                </p>
 
-                {/* <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-1 gap-2 sm:gap-6">
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-1 gap-2 sm:gap-6">
                     {medias.map((media) => (
                         <div
                             key={media.id}
@@ -100,7 +146,7 @@ export function SponsorsSection() {
                             />
                         </div>
                     ))}
-                </div> */}
+                </div>
             </div>
         </section>
     )

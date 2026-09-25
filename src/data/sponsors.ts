@@ -19,13 +19,16 @@ export const organizers = [
         label: "Dikti",
         logo: "/sponsors/dikti.png"
     },
+]
+
+export const coOrganizers = [
     {
-        id: "sponsor-5",
+        id: "sponsor-1",
         label: "Fakultas Ilmu Sosial dan Ilmu Politik Universitas Diponegoro",
         logo: "/sponsors/fisip-undip.png"
     },
     {
-        id: "sponsor-6",
+        id: "sponsor-2",
         label: "Hubungan Internasional Universitas Diponegoro",
         logo: "/sponsors/hi-undip.png"
     },
@@ -55,7 +58,15 @@ export const journals = [
 export const medias = [
     {
         id: "media-1",
-        label: "Japan Foundation",
-        logo: "/sponsors/japanfoundation_cropped.png"
+        label: "Bloka",
+        logo: "/sponsors/bloka.png"
+    },
+]
+
+export const strategicPartners = [
+    {
+        id: "strategic-partner-1",
+        label: "KRKP",
+        logo: "/sponsors/krkp.png"
     },
 ]
