@@ -61,6 +61,11 @@ export const medias = [
         label: "Bloka",
         logo: "/sponsors/bloka.png"
     },
+    {
+        id: "media-2",
+        label: "Foreign Policy Talks",
+        logo: "/sponsors/fpt.png"
+    }
 ]
 
 export const strategicPartners = [

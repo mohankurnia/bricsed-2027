@@ -12,9 +12,9 @@ export function SpeakersSection() {
                     Speakers
                 </h2>
 
-                {/* Keynote Speaker */}
+                {/* Opening Remarks */}
                 <p data-aos="fade-up" data-aos-delay="100" className="text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
-                    Keynote Speaker
+                    Opening Remarks
                 </p>
                 <div data-aos="zoom-in" data-aos-delay="200" className="my-5 mx-auto max-w-[550px] md:max-w-[350px] w-full grid gap-5 items-center">
                     {keynotes.map((keynote, index) => (
@@ -26,9 +26,9 @@ export function SpeakersSection() {
                     ))}
                 </div>
 
-                {/* Panelist */}
+                {/* Keynote Speakers */}
                 <p data-aos="fade-up" className="text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
-                    Speakers
+                    Keynote Speakers
                 </p>
                 <div data-aos="zoom-in" className="mt-5 px-0 sm:px-8 md:px-10 lg:px-15 grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-items-center">
                     {panelists.map((panelist, index) => (
