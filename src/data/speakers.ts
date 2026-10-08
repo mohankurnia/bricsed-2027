@@ -22,10 +22,10 @@ export const panelists = [
     },
     {
         id: "speaker-4",
-        name: "To be Announced",
-        image: "/tba-speaker.png",
-        title: "Researcher from an Acclaimed Japanese Institution",
-        status: "unconfirmed"
+        name: "Professor Isamu Okada, Ph.D.",
+        image: "/images/speakers/isamu_okada.png",
+        title: "Graduate School of International Development, Nagoya University",
+        status: "confirmed"
     },
 ]
 
