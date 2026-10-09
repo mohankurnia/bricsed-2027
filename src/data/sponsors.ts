@@ -59,12 +59,17 @@ export const medias = [
     {
         id: "media-1",
         label: "Bloka",
-        logo: "/sponsors/bloka.png"
+        logo: "/sponsors/bloka_resized.png"
     },
     {
         id: "media-2",
         label: "Foreign Policy Talks",
-        logo: "/sponsors/fpt.png"
+        logo: "/sponsors/fpt_resized.png"
+    },
+    {
+        id: "media-3",
+        label: "Himpunan Mahasiswa Ilmu Pemerintahan Universitas Brawijaya",
+        logo: "/sponsors/himap_resized.png"
     }
 ]
 
@@ -72,6 +77,11 @@ export const strategicPartners = [
     {
         id: "strategic-partner-1",
         label: "KRKP",
-        logo: "/sponsors/krkp.PNG"
+        logo: "/sponsors/krkp_resized.png"
     },
+    {
+        id: "strategic-partner-2",
+        label: "Strategic Partner 2",
+        logo: "/sponsors/strategic-partner-2_resized.png"
+    }
 ]

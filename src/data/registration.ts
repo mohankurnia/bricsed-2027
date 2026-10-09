@@ -7,6 +7,8 @@ export const conferenceRegistrationEarlyBird = [
             ["Onsite International", "USD 40"],
             ["Online Domestic", "Rp250.000"],
             ["Online International", "USD 15"],
+            ["UB and Co-Hosts Lecturer", "Rp500.000"],
+            ["UB and Co-Hosts Student", "Rp200.000"],
         ],
     },
     {

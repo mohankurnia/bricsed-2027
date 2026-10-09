@@ -107,7 +107,7 @@ export function SponsorsSection() {
                     Strategic Partners
                 </p>
 
-                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-1 gap-2 sm:gap-6">
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-2 gap-2 sm:gap-6">
                     {strategicPartners.map((strategicPartner) => (
                         <div
                             key={strategicPartner.id}
@@ -119,7 +119,7 @@ export function SponsorsSection() {
                                 alt={strategicPartner.label}
                                 width={240}
                                 height={120}
-                                className="h-full w-full object-contain"
+                                className="h-full w-full scale-120 object-contain"
                             />
                         </div>
                     ))}
@@ -130,7 +130,7 @@ export function SponsorsSection() {
                     Media Partners
                 </p>
 
-                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-2 gap-2 sm:gap-6">
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-3 gap-2 sm:gap-6">
                     {medias.map((media) => (
                         <div
                             key={media.id}
@@ -142,7 +142,7 @@ export function SponsorsSection() {
                                 alt={media.label}
                                 width={240}
                                 height={120}
-                                className="h-full w-full object-contain"
+                                className="h-full w-full scale-75 object-contain"
                             />
                         </div>
                     ))}
