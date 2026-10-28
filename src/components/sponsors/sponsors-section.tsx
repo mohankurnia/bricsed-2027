@@ -38,7 +38,7 @@ export function SponsorsSection() {
                     Co-Organized by
                 </p>
 
-                <div className="mx-auto mt-2 grid max-w-5xl grid-cols-2 gap-2 sm:gap-6"> {/* change grid here */}
+                <div className="mx-auto mt-2 grid max-w-5xl grid-cols-4 gap-2 sm:gap-6"> {/* change grid here */}
                     {coOrganizers.map((coOrganizer) => (
                         <div
                             key={coOrganizer.id}
@@ -80,11 +80,11 @@ export function SponsorsSection() {
                 </div>
 
                 {/* Journal Partners */}
-                {/* <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
                     Journal Partners
                 </p>
 
-                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-2 gap-2 sm:gap-6">
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-3 gap-2 sm:gap-6">
                     {journals.map((journal) => (
                         <div
                             key={journal.id}
@@ -100,14 +100,14 @@ export function SponsorsSection() {
                             />
                         </div>
                     ))}
-                </div> */}
+                </div>
 
                 {/* Strategic Partners */}
                 <p data-aos="fade-up" data-aos-delay="100" className="mt-10 text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
                     Strategic Partners
                 </p>
 
-                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-2 gap-2 sm:gap-6">
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-4 gap-2 sm:gap-6">
                     {strategicPartners.map((strategicPartner) => (
                         <div
                             key={strategicPartner.id}

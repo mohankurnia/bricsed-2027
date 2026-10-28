@@ -1,4 +1,4 @@
-import { keynotes, panelists } from "@/data/speakers"
+import { keynotes, openings, moderators } from "@/data/speakers"
 import { SpeakerCard } from "./speaker-card"
 
 export function SpeakersSection() {
@@ -17,10 +17,10 @@ export function SpeakersSection() {
                     Opening Remarks
                 </p>
                 <div data-aos="zoom-in" data-aos-delay="200" className="my-5 mx-auto max-w-[550px] md:max-w-[350px] w-full grid gap-5 items-center">
-                    {keynotes.map((keynote, index) => (
+                    {openings.map((opening, index) => (
                         <SpeakerCard
-                            key={keynote.id}
-                            {...keynote}
+                            key={opening.id}
+                            {...opening}
                             variant={index % 2 === 0 ? "blue" : "green"}
                         />
                     ))}
@@ -30,11 +30,25 @@ export function SpeakersSection() {
                 <p data-aos="fade-up" className="text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
                     Keynote Speakers
                 </p>
-                <div data-aos="zoom-in" className="mt-5 px-0 sm:px-8 md:px-10 lg:px-15 grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-items-center">
-                    {panelists.map((panelist, index) => (
+                <div data-aos="zoom-in" className="my-5 px-0 sm:px-8 md:px-10 lg:px-15 grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-items-center">
+                    {keynotes.map((keynote, index) => (
                         <SpeakerCard
-                            key={panelist.id}
-                            {...panelist}
+                            key={keynote.id}
+                            {...keynote}
+                            variant={index % 2 === 0 ? "blue" : "green"}
+                        />
+                    ))}
+                </div>
+                
+                {/* Moderator */}
+                <p data-aos="fade-up" data-aos-delay="100" className="text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
+                    Moderator
+                </p>
+                <div data-aos="zoom-in" data-aos-delay="200" className="my-5 mx-auto max-w-[550px] md:max-w-[350px] w-full grid gap-5 items-center">
+                    {moderators.map((moderator, index) => (
+                        <SpeakerCard
+                            key={moderator.id}
+                            {...moderator}
                             variant={index % 2 === 0 ? "blue" : "green"}
                         />
                     ))}

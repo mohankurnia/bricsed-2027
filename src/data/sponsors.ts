@@ -32,6 +32,16 @@ export const coOrganizers = [
         label: "Hubungan Internasional Universitas Diponegoro",
         logo: "/sponsors/hi-undip.png"
     },
+    {
+        id: "sponsor-3",
+        label: "UIN Sunan Ampel Surabaya",
+        logo: "/sponsors/uin-sunan-ampel.png"
+    },
+    {
+        id: "sponsor-4",
+        label: "UNESA Surabaya",
+        logo: "/sponsors/unesa.png"
+    },
 ]
 
 export const supports = [
@@ -43,15 +53,25 @@ export const supports = [
 ]
 
 export const journals = [
-    {
-        id: "journal-1",
-        label: "Indonesia Perspective",
-        logo: "/sponsors/Indonesia_Perspective_Journal.jpeg"
-    },
+    // {
+    //     id: "journal-1",
+    //     label: "Indonesia Perspective",
+    //     logo: "/sponsors/Indonesia_Perspective_Journal.jpeg"
+    // },
     {
         id: "journal-2",
         label: "Jurnal Ilmu Sosial",
         logo: "/sponsors/Jurnal_Ilmu_Sosial.jpeg"
+    },
+    {
+        id: "journal-3",
+        label: "Jurnal Transformative Ilmu Pemerintahan",
+        logo: "/sponsors/jurnal-transformative-black-resized.png"
+    },
+    {
+        id: "journal-4",
+        label: "Jurnal Global Local Interactions",
+        logo: "/sponsors/global-local-interactions.png"
     },
 ]
 
@@ -70,7 +90,22 @@ export const medias = [
         id: "media-3",
         label: "Himpunan Mahasiswa Ilmu Pemerintahan Universitas Brawijaya",
         logo: "/sponsors/himap_resized.png"
-    }
+    },
+    {
+        id: "media-4",
+        label: "FPCI Universitas Brawijaya",
+        logo: "/sponsors/fpci-ub.png"
+    },
+    {
+        id: "media-5",
+        label: "Himpunan Mahasiswa Hubungan Internasional Universitas Brawijaya",
+        logo: "/sponsors/himahi-ub.png"
+    },
+    {
+        id: "media-6",
+        label: "Cakrawala Cita",
+        logo: "/sponsors/cakrawala-cita.png"
+    },
 ]
 
 export const strategicPartners = [
@@ -81,7 +116,17 @@ export const strategicPartners = [
     },
     {
         id: "strategic-partner-2",
-        label: "Strategic Partner 2",
+        label: "Enter Nusantara",
         logo: "/sponsors/strategic-partner-2_resized.png"
-    }
+    },
+    {
+        id: "strategic-partner-3",
+        label: "Ilitterless",
+        logo: "/sponsors/ilitterless.png"
+    },
+    {
+        id: "strategic-partner-4",
+        label: "Institut Hijau Indonesia",
+        logo: "/sponsors/institut-hijau-indonesia.png"
+    },
 ]

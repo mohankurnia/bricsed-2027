@@ -1,4 +1,4 @@
-export const panelists = [
+export const keynotes = [
     {
         id: "speaker-1",
         name: "Prof. Devanto Shasta Pratomo S.E., M.Si., Ph.D.",
@@ -8,33 +8,43 @@ export const panelists = [
     },
     {
         id: "speaker-2",
-        name: "Dr. Anggun Trisnanto Hari Susilo, S.IP., M.IDEA.",
-        image: "/images/speakers/anggun-trisnanto.png",
-        title: "Faculty of Social and Political Sciences, Universitas Brawijaya",
-        status: "confirmed"
-    },
-    {
-        id: "speaker-3",
         name: "Yogi Setya Permana, Ph.D",
         image: "/images/speakers/yogi-setya-permana.png",
         title: "Researcher at The National Research and Innovation Agency (BRIN)",
         status: "confirmed"
     },
     {
-        id: "speaker-4",
+        id: "speaker-3",
         name: "Professor Isamu Okada, Ph.D.",
         image: "/images/speakers/isamu_okada.png",
         title: "Graduate School of International Development, Nagoya University",
         status: "confirmed"
     },
+    {
+        id: "speaker-4",
+        name: "Professor Dirk Tomsa",
+        image: "/images/speakers/dirk-tomsa.png",
+        title: "Associate Professor in Politics, La Trobe University, Australia",
+        status: "confirmed"
+    },
 ]
 
-export const keynotes = [
+export const openings = [
     {
         id: "speaker-1",
         name: "To be Announced",
         image: "/tba-speaker.png",
         title: "Coming Soon",
         status: "unconfirmed",
+    },
+]
+
+export const moderators = [
+    {
+        id: "moderator-1",
+        name: "Dr. Anggun Trisnanto Hari Susilo, S.IP., M.IDEA.",
+        image: "/images/speakers/anggun-trisnanto.png",
+        title: "Faculty of Social and Political Sciences, Universitas Brawijaya",
+        status: "confirmed"
     },
 ]
