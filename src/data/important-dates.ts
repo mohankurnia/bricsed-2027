@@ -1,7 +1,7 @@
 export const conferenceDates = [
     {
-        date: "7 September - 31 October 2026",
-        title: "Call for Papers",
+        date: "7 September - 14 November 2026",
+        title: "Call for Papers EXTENDED",
         status: "now"
     },
     // {
@@ -10,7 +10,7 @@ export const conferenceDates = [
     //     status: "not yet"
     // },
     {
-        date: "5 November 2026",
+        date: "19 November 2026",
         title: "Abstracts Acceptance Notification",
         status: "not yet"
     },

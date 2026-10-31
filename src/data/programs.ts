@@ -18,9 +18,9 @@ export const internationalConference = {
     date: 
         "30 - 31 January 2027",
 
-    registration_link: "https://s.ub.ac.id/abstractbricsed",
+    registration_link: "https://bit.ly/SubmitAbstractBRICSED",
 
-    guidelines: "https://s.ub.ac.id/guidebookabstract"
+    guidelines: "https://bit.ly/4jGDLPk"
 }
 
 export const callForPapers = {
@@ -38,7 +38,7 @@ export const callForPapers = {
     date: 
         "31 January 2027",
 
-    registration_link: "https://s.ub.ac.id/studentpaper",
+    registration_link: "https://bit.ly/SubmitCompetitionBRICSED",
 
-    guidelines: "https://s.ub.ac.id/guidebookpaperbricsed"
+    guidelines: "https://bit.ly/4eUYCuL"
 }

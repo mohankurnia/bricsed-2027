@@ -8,7 +8,7 @@ export function CommitteeSection() {
                     Committee
                 </h2>
 
-                <div className="mt-5 mx-0 xl:mx-40 flex flex-col sm:grid py-4 px-4 md:px-8 gap-5 md:gap-10 lg:gap-20 items-center sm:grid-cols-[200px_1fr] lg:grid-cols-[300px_1fr]">
+                {/* <div className="mt-5 mx-0 xl:mx-40 flex flex-col sm:grid py-4 px-4 md:px-8 gap-5 md:gap-10 lg:gap-20 items-center sm:grid-cols-[200px_1fr] lg:grid-cols-[300px_1fr]">
                   <div className="w-fit sm:w-full flex flex-row gap-2 sm:gap-0 sm:flex-col items-center sm:items-start text-center sm:text-left">
                     <p data-aos="fade-right" className="w-fit sm:w-full font-primary italic font-medium leading-tight text-gradient-blue text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                         Project
@@ -27,16 +27,16 @@ export function CommitteeSection() {
                       {projectManager.name}
                     </p>
                   ))}
-                </div>
+                </div> */}
 
                 <div className="mt-5 mx-0 xl:mx-40 flex flex-col sm:grid py-4 px-4 md:px-8 gap-5 md:gap-10 lg:gap-20 items-center sm:grid-cols-[200px_1fr] lg:grid-cols-[300px_1fr]">
                   <div className="w-fit sm:w-full sm:mb-auto flex flex-row gap-2 sm:gap-0 sm:flex-col items-center sm:items-start text-center sm:text-left">
                     <p data-aos="fade-right" className="w-fit sm:w-full font-primary italic font-medium leading-tight text-gradient-blue text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                        Scientific
+                        Committee &
                     </p>
 
                     <p data-aos="fade-right" data-aos-delay="100" className="w-fit sm:w-full font-primary italic font-medium leading-none text-[#11990A] text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-                        Committee
+                        Panelists
                     </p>
                   </div>
 

@@ -106,13 +106,18 @@ export const medias = [
         label: "Cakrawala Cita",
         logo: "/sponsors/cakrawala-cita.png"
     },
+    {
+        id: "media-7",
+        label: "Se7enline Radio",
+        logo: "/sponsors/se7enline-radio-hd.png"
+    },
 ]
 
 export const strategicPartners = [
     {
         id: "strategic-partner-1",
         label: "KRKP",
-        logo: "/sponsors/krkp_resized.png"
+        logo: "/sponsors/krkp.png"
     },
     {
         id: "strategic-partner-2",

@@ -30,7 +30,7 @@ export function SpeakersSection() {
                 <p data-aos="fade-up" className="text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
                     Keynote Speakers
                 </p>
-                <div data-aos="zoom-in" className="my-5 px-0 sm:px-8 md:px-10 lg:px-15 grid gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-items-center">
+                <div data-aos="zoom-in" className="my-5 px-0 sm:px-8 md:px-10 lg:px-15 grid gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-items-center">
                     {keynotes.map((keynote, index) => (
                         <SpeakerCard
                             key={keynote.id}
@@ -42,9 +42,9 @@ export function SpeakersSection() {
                 
                 {/* Moderator */}
                 <p data-aos="fade-up" data-aos-delay="100" className="text-center font-bold text-2xl md:text-4xl text-gradient-blue leading-normal">
-                    Moderator
+                    Moderators
                 </p>
-                <div data-aos="zoom-in" data-aos-delay="200" className="my-5 mx-auto max-w-[550px] md:max-w-[350px] w-full grid gap-5 items-center">
+                <div data-aos="zoom-in" data-aos-delay="200" className="my-5 mx-auto max-w-[550px] md:max-w-[700px] lg:max-w-[1000px] w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-center">
                     {moderators.map((moderator, index) => (
                         <SpeakerCard
                             key={moderator.id}

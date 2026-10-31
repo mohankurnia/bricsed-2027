@@ -47,4 +47,18 @@ export const moderators = [
         title: "Faculty of Social and Political Sciences, Universitas Brawijaya",
         status: "confirmed"
     },
+    {
+        id: "moderator-2",
+        name: "Asih Purwanti, S.IP., M.IP.",
+        image: "/images/speakers/asih-purwanti.png",
+        title: "Faculty of Social and Political Sciences, Universitas Brawijaya",
+        status: "confirmed"
+    },
+    {
+        id: "moderator-3",
+        name: "Dewa Ayu Putu Eva Wishanti, S.IP., M.Si., Ph.D",
+        image: "/images/speakers/eva-wishanti.png",
+        title: "Faculty of Social and Political Sciences, Universitas Brawijaya",
+        status: "confirmed"
+    },
 ]

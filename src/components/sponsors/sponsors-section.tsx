@@ -130,7 +130,7 @@ export function SponsorsSection() {
                     Media Partners
                 </p>
 
-                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-3 gap-2 sm:gap-6">
+                <div className="mx-auto mt-2 grid justify-center max-w-5xl grid-cols-4 gap-2 sm:gap-6">
                     {medias.map((media) => (
                         <div
                             key={media.id}
