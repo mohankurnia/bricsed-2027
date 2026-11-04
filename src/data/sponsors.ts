@@ -53,11 +53,11 @@ export const supports = [
 ]
 
 export const journals = [
-    // {
-    //     id: "journal-1",
-    //     label: "Indonesia Perspective",
-    //     logo: "/sponsors/Indonesia_Perspective_Journal.jpeg"
-    // },
+    {
+        id: "journal-1",
+        label: "Indonesia Perspective",
+        logo: "/sponsors/Indonesia_Perspective_Journal.jpeg"
+    },
     {
         id: "journal-2",
         label: "Jurnal Ilmu Sosial",
@@ -72,6 +72,31 @@ export const journals = [
         id: "journal-4",
         label: "Jurnal Global Local Interactions",
         logo: "/sponsors/global-local-interactions.png"
+    },
+    {
+        id: "journal-5",
+        label: "Journal of Integrative International Relations ",
+        logo: "/sponsors/jiir.png"
+    },
+    {
+        id: "journal-6",
+        label: "Global Focus",
+        logo: "/sponsors/global-focus.webp"
+    },
+    {
+        id: "journal-7",
+        label: "Indonesian Journal of Political Studies",
+        logo: "/sponsors/ijps.jpeg"
+    },
+    {
+        id: "journal-8",
+        label: "Jurnal Politique",
+        logo: "/sponsors/jurnal-politique.png"
+    },
+    {
+        id: "journal-9",
+        label: "Social Issues by Academic Researchers",
+        logo: "/sponsors/siyar.jpeg"
     },
 ]
 
