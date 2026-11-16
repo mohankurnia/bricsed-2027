@@ -1,6 +1,6 @@
 export const conferenceDates = [
     {
-        date: "7 September - 14 November 2026",
+        date: "7 September - 1 December 2026",
         title: "Call for Papers EXTENDED",
         status: "now"
     },
@@ -10,8 +10,8 @@ export const conferenceDates = [
     //     status: "not yet"
     // },
     {
-        date: "19 November 2026",
-        title: "Abstracts Acceptance Notification",
+        date: "20 November - 10 December 2026",
+        title: "Abstract Notification",
         status: "not yet"
     },
     {
@@ -26,7 +26,7 @@ export const conferenceDates = [
     },
     {
         date: "16 January 2027",
-        title: "Submission Deadline for PPT (Mandatory) & Full Paper (Optional)",
+        title: "Slides (Mandatory) and Full Paper (Optional) Submission Deadline",
         status: "not yet"
     },
     {
@@ -36,15 +36,15 @@ export const conferenceDates = [
     },
     {
         date: "TBA",
-        title: "Proceedings (Only for Selected Papers) & Journal Submission (Only for Selected Papers, subject to each journal's policy)",
+        title: "Conference proceedings and journals submission (subject to each publication’s policy)",
         status: "not yet"
     },
 ]
 
 export const competitionDates = [
     {
-        date: "10 September - 10 November 2026",
-        title: "Call for Papers",
+        date: "10 September - 27 November 2026",
+        title: "Student Paper Submission",
         status: "now"
     },
     // {
