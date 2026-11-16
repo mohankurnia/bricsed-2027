@@ -91,7 +91,7 @@ const pricingTabs = [
     {
         label: "International Paper Student Competition Payment",
         title: "International Paper Student Competition Payment",
-        date: "10 November 2026",
+        date: "27 November 2026",
         program: "International Paper Student Competition",
         items: [paperSubmission],
     },

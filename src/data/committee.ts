@@ -62,4 +62,32 @@ export const scientificCommittees = [
     id: "scientific-committee-14",
     name: "Henny Rosalinda, S.IP., M.A., Ph.D"
   },
+  {
+    id: "scientific-committee-15",
+    name: "Prof. Devanto Shasta Pratomo S.E., M.Si., Ph.D."
+  },
+  {
+    id: "scientific-committee-16",
+    name: "Yogi Setya Permana, Ph.D"
+  },
+  {
+    id: "scientific-committee-17",
+    name: "Professor Isamu Okada, Ph.D."
+  },
+  {
+    id: "scientific-committee-18",
+    name: "Professor Dirk Tomsa"
+  },
+  {
+    id: "scientific-committee-19",
+    name: "Dr. Wayan Weda Asmara Dewi, S.I.Kom., M.I.Kom"
+  },
+  {
+    id: "scientific-committee-20",
+    name: "Rizqi Bachtiar, S.AP., MPA., Ph.D"
+  },
+  {
+    id: "scientific-committee-21",
+    name: "Asih Purwanti, S.IP., M.IP."
+  },
 ]
